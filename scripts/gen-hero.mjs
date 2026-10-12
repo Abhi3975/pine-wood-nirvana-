@@ -6,13 +6,13 @@ import sharp from "sharp";
 
 const jobs = [
   { src: "public/images/hero-valley.webp", name: "valley", widths: [960, 1440, 1920] },
-  { src: "public/images/hero-cottage.webp", name: "cottage", widths: [480, 750, 1080] },
+  { src: "public/images/hero-cottage.webp", name: "cottage", widths: [480, 750], quality: 56 },
 ];
 await mkdir("public/images/hero", { recursive: true });
 for (const j of jobs) {
   for (const w of j.widths) {
     const out = `public/images/hero/${j.name}-${w}.webp`;
-    const info = await sharp(j.src).resize({ width: w, withoutEnlargement: true }).webp({ quality: 68 }).toFile(out);
+    const info = await sharp(j.src).resize({ width: w, withoutEnlargement: true }).webp({ quality: j.quality ?? 68 }).toFile(out);
     console.log(out, Math.round(info.size / 1024) + "KB");
   }
 }

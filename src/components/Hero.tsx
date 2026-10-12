@@ -12,7 +12,8 @@ const heroAlt = "Sunset over the Shimla hills seen through the pines at Pine Woo
 // Pre-sized files (scripts/gen-hero.mjs) served straight from the CDN, so the first screen
 // never waits on on-demand image resizing.
 const desktopSet = "/images/hero/valley-960.webp 960w, /images/hero/valley-1440.webp 1440w, /images/hero/valley-1920.webp 1920w";
-const mobileSet = "/images/hero/cottage-480.webp 480w, /images/hero/cottage-750.webp 750w, /images/hero/cottage-1080.webp 1080w";
+// Phones top out at 750px: under the dark overlay it looks identical and saves ~100KB.
+const mobileSet = "/images/hero/cottage-480.webp 480w, /images/hero/cottage-750.webp 750w";
 
 /** Landscape valley view on wide screens, the red-roof cottage at sunset on phones. */
 function HeroPicture() {
