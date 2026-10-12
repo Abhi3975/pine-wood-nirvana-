@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    // YouTube thumbnails for the guest-stories videos.
+    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
+  },
   turbopack: {
     root: __dirname,
     rules: {

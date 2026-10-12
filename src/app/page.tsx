@@ -22,6 +22,7 @@ import Reveal from "@/components/Reveal";
 import Reviews from "@/components/Reviews";
 import SmoothScroll from "@/components/SmoothScroll";
 import Stays from "@/components/Stays";
+import VideoStories from "@/components/VideoStories";
 import WaysToStay from "@/components/WaysToStay";
 
 export default function Home() {
@@ -41,6 +42,7 @@ export default function Home() {
         <Film />
         <Gallery />
         <Reviews />
+        <VideoStories />
         <Nearby />
         <Location />
         <MapSection />

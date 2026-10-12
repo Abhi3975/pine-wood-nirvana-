@@ -410,3 +410,14 @@ export const diningSpots = [
   { title: "Open-air tent", text: "Lunch under the canopy with the hills all around.", img: "/images/dining-tent.webp" },
   { title: "Fireside dinners", text: "Candles, fairy lights and a crackling bonfire.", img: "/images/firelit-dinner.webp" },
 ];
+
+// Guest video testimonials. None exist on the GhumoG channel yet — add real ones here
+// (YouTube video or Short id) and they appear first in the "Guest stories" section.
+export type VideoStory = { id: string; name: string; trip: string; quote: string };
+export const videoTestimonials: VideoStory[] = [];
+
+// Real Pine Wood Nirvana videos from youtube.com/@ghumog.
+export const resortReels = [
+  { id: "z98SnKhL3XI", title: "A minute at Pine Wood Nirvana", caption: "Resort reel · @ghumog" },
+  { id: "oYVyzkuprbg", title: "The full resort tour", caption: "Pet-friendly jungle resort · @ghumog" },
+];
