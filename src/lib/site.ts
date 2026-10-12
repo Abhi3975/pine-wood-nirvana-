@@ -28,11 +28,11 @@ export const telHref = (phone: string = site.phones[0]) =>
 export const waHref = (text: string) =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 
-// Where the map and "Directions" point. The resort's own Google listing currently has its pin
-// in Shimla city (31.1027, 77.1998), ~10 km from the resort, so we don't use the listing name.
-// Until the client shares their exact pin, we point at Shoghi and let the steps (and a live
-// WhatsApp location) cover the last 2.5 km. Set exact: true once lat/lng is the resort itself.
-export const mapPin = { lat: 31.039054, lng: 77.1246457, label: "Shoghi, Shimla", exact: false };
+// Where the map and "Directions" point: the resort's coordinates from its Tripadvisor/hotel
+// listings (consistent with Tripadvisor's "6.3 km from Shimla Airport" and the resort's own
+// "2.5 km from the main highway at Shoghi"). The resort's Google Business listing pins it in
+// Shimla city (31.1027, 77.1998) — wrong — so we never route by its name.
+export const mapPin = { lat: 31.032158, lng: 77.088405, label: "Pine Wood Nirvana, Village Paughat, Shoghi", exact: true };
 
 export const mapsDirectionsHref = `https://www.google.com/maps/dir/?api=1&destination=${mapPin.lat},${mapPin.lng}`;
 export const mapsOpenHref = `https://www.google.com/maps/search/?api=1&query=${mapPin.lat},${mapPin.lng}`;
