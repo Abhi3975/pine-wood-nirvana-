@@ -67,11 +67,11 @@ export default function Pricing() {
 
       <div className="mx-auto mt-12 max-w-7xl px-4 md:mt-16 md:px-8" data-reveal>
         <h3 className="mb-5 font-display text-2xl text-forest">Make it yours</h3>
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {pricing.extras.map((x) => (
-            <li key={x.title} className="rounded-2xl bg-white p-5 ring-1 ring-forest/10">
+            <li key={x.title} className="rounded-2xl bg-white p-4 ring-1 ring-forest/10 md:p-5">
               <p className="font-semibold text-forest">{x.title}</p>
-              <p className="mt-1 text-sm text-ink/65">{x.text}</p>
+              <p className="mt-1 text-xs leading-relaxed text-ink/65 md:text-sm">{x.text}</p>
               <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-sunset">On request</p>
             </li>
           ))}

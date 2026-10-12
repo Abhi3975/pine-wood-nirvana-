@@ -7,14 +7,14 @@ export default function Founder() {
     <section id="founder" className="px-4 py-16 md:px-8 md:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[auto_1fr] md:gap-16">
         {/* Portrait */}
-        <div className="relative mx-auto w-60 sm:w-64 md:w-72" data-reveal>
+        <div className="relative mx-auto w-44 sm:w-56 md:w-72" data-reveal>
           <div className="absolute -inset-3 -rotate-3 rounded-[2rem] bg-sunset/15" aria-hidden />
           <div className="relative aspect-[328/606] overflow-hidden rounded-[2rem] shadow-2xl ring-4 ring-white">
             <Img src={founder.photo} alt={`${founder.name}, founder of GhumoG Stay`} fill sizes="288px" className="object-cover" />
           </div>
           <div className="absolute -bottom-5 left-1/2 w-max -translate-x-1/2 rounded-full bg-forest px-5 py-2.5 text-center text-white shadow-xl">
             <p className="font-display text-base md:text-lg leading-tight">{founder.name}</p>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-white/60">Founder</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-white/60">Founder</p>
           </div>
         </div>
 

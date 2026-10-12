@@ -28,12 +28,12 @@ export default function DayHere() {
   return (
     <section id="day" className="bg-forest px-4 py-16 text-white md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 max-w-2xl md:mb-16" data-reveal>
+        <div className="mb-8 max-w-2xl md:mb-16" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">A day here</p>
           <h2 className="font-display text-3xl font-light md:text-5xl">From misty mornings to firelit nights.</h2>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid lg:grid-cols-2 lg:gap-20">
           {/* Sticky photo stack — desktop only */}
           <div className="hidden lg:block">
             <div className="sticky top-28">
@@ -57,7 +57,26 @@ export default function DayHere() {
             </div>
           </div>
 
-          <ol className="relative space-y-12 border-l border-white/15 pl-8 lg:space-y-0 lg:py-[10vh]">
+          {/* Phones: a swipeable row of moments */}
+          <ol className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 lg:hidden">
+            {dayHere.map((d) => (
+              <li key={d.title} className="w-[82%] shrink-0 snap-start overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 sm:w-[60%]">
+                <div className="relative aspect-[4/3]">
+                  <Img src={d.img} alt={d.title} fill sizes="(min-width: 640px) 60vw, 82vw" className="object-cover" />
+                  <span className="absolute left-3 top-3 rounded-full bg-black/45 px-3 py-1 text-sm font-semibold backdrop-blur">
+                    {d.time}
+                  </span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-xl">{d.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">{d.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          {/* Desktop: scrolling timeline beside the sticky photo */}
+          <ol className="relative hidden border-l border-white/15 pl-8 py-[10vh] lg:block">
             {dayHere.map((d, i) => (
               <li
                 key={d.title}
@@ -65,25 +84,22 @@ export default function DayHere() {
                   steps.current[i] = el;
                 }}
                 data-index={i}
-                className="relative lg:flex lg:min-h-[55vh] lg:flex-col lg:justify-center"
+                className="relative flex min-h-[55vh] flex-col justify-center"
               >
                 <span
-                  className={`absolute -left-[41px] top-1.5 size-4 rounded-full ring-4 ring-forest transition-colors duration-500 lg:top-auto ${
+                  className={`absolute -left-[41px] size-4 rounded-full ring-4 ring-forest transition-colors duration-500 ${
                     i === active ? "bg-sunset" : "bg-white/30"
                   }`}
                 />
                 <p className="font-display text-xl text-sunset">{d.time}</p>
                 <h3
-                  className={`mt-1 font-display text-3xl transition-opacity duration-500 md:text-3xl ${
-                    i === active ? "opacity-100" : "lg:opacity-40"
+                  className={`mt-1 font-display text-3xl transition-opacity duration-500 ${
+                    i === active ? "opacity-100" : "opacity-40"
                   }`}
                 >
                   {d.title}
                 </h3>
                 <p className="mt-3 max-w-md text-white/70">{d.text}</p>
-                <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-2xl lg:hidden">
-                  <Img src={d.img} alt={d.title} fill sizes="(min-width: 1024px) 1px, 90vw" className="object-cover" />
-                </div>
               </li>
             ))}
           </ol>

@@ -12,7 +12,7 @@ export default function About() {
     <section id="about" className="overflow-hidden bg-forest px-4 py-16 text-white md:px-8 md:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="relative" data-reveal>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl md:aspect-[5/4] lg:aspect-[4/5]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[5/4] lg:aspect-[4/5]">
             <Img src="/images/evening-cottages.webp" alt="Cottages lit up in the evening" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
           </div>
           <div className="absolute bottom-4 right-4 rounded-2xl bg-cream px-5 py-4 text-forest shadow-2xl">

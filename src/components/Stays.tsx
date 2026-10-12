@@ -7,26 +7,46 @@ import { openConcierge } from "./Concierge";
 import { CheckIcon, ChevronIcon, UsersIcon, WhatsAppIcon } from "./icons";
 
 export default function Stays() {
+  // Phones show one cottage at a time (tabs); desktop shows all three.
+  const [active, setActive] = useState(stays[0].id);
   return (
     <section id="stays" className="px-4 py-16 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 max-w-2xl md:mb-14" data-reveal>
+        <div className="mb-6 max-w-2xl md:mb-14" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Stays</p>
           <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Three ways to stay in the forest.</h2>
-          <p className="mt-5 text-base md:text-lg text-ink/70">
+          <p className="mt-3 text-base text-ink/70 md:mt-5 md:text-lg">
             Every cottage sits among tall pines with its own path, its own view and nothing but birdsong for company.
             Pick one — we&apos;ll confirm availability on WhatsApp.
           </p>
         </div>
 
-        <div className="space-y-14 md:space-y-24">
+        <div className="no-scrollbar -mx-4 mb-5 flex gap-2 overflow-x-auto px-4 md:hidden" role="tablist" aria-label="Choose a cottage">
+          {stays.map((s) => (
+            <button
+              key={s.id}
+              role="tab"
+              aria-selected={active === s.id}
+              onClick={() => setActive(s.id)}
+              className={`min-h-11 shrink-0 rounded-full px-4 text-sm font-semibold ring-1 transition ${
+                active === s.id ? "bg-forest text-white ring-forest" : "bg-white text-forest ring-forest/15"
+              }`}
+            >
+              {s.short} <span className="font-normal opacity-70">· {s.guests}</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="md:space-y-24">
           {stays.map((s, i) => (
-            <StayCard key={s.id} stay={s} flip={i % 2 === 1} />
+            <div key={s.id} className={active === s.id ? "" : "hidden md:block"}>
+              <StayCard stay={s} flip={i % 2 === 1} />
+            </div>
           ))}
         </div>
 
         <div
-          className="mt-14 flex flex-col items-start md:mt-20 justify-between gap-6 rounded-3xl bg-sand p-8 md:flex-row md:items-center md:p-10"
+          className="mt-10 flex flex-col items-start justify-between gap-5 rounded-3xl bg-sand p-6 md:mt-20 md:flex-row md:items-center md:gap-6 md:p-10"
           data-reveal
         >
           <div>
@@ -62,7 +82,7 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
   };
 
   return (
-    <article className="grid items-center gap-8 md:grid-cols-12 md:gap-12" data-reveal>
+    <article className="grid items-center gap-5 md:grid-cols-12 md:gap-12" data-reveal>
       <div className={`relative md:col-span-7 ${flip ? "md:order-2" : ""}`}>
         <div
           ref={track}
@@ -99,14 +119,12 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <span className="absolute right-3 top-3 rounded-full bg-black/45 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
           {index + 1} / {stay.images.length}
         </span>
-        <div className="absolute inset-x-0 bottom-4 flex justify-center gap-1.5">
+        <div className="absolute inset-x-0 bottom-1 flex justify-center">
           {stay.images.map((img, i) => (
-            <button
-              key={img.src}
-              onClick={() => go(i)}
-              aria-label={`Photo ${i + 1}`}
-              className={`h-1.5 rounded-full bg-white transition-all ${i === index ? "w-6" : "w-1.5 opacity-60"}`}
-            />
+            // Tiny dot, but a full 40px finger-sized tap area around it.
+            <button key={img.src} onClick={() => go(i)} aria-label={`Photo ${i + 1}`} className="grid h-10 min-w-7 place-items-center px-1">
+              <span className={`block h-1.5 rounded-full bg-white transition-all ${i === index ? "w-6" : "w-1.5 opacity-60"}`} />
+            </button>
           ))}
         </div>
       </div>
@@ -115,23 +133,23 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-pine/10 px-3 py-1 text-xs font-semibold text-pine">
           <UsersIcon className="size-4" /> {stay.guests}
         </p>
-        <h3 className="font-display text-3xl text-forest md:text-4xl">{stay.name}</h3>
-        <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/70">{stay.blurb}</p>
-        <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5">
+        <h3 className="font-display text-2xl text-forest md:text-4xl">{stay.name}</h3>
+        <p className="mt-2 text-base leading-relaxed text-ink/70 md:mt-4 md:text-lg">{stay.blurb}</p>
+        <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 md:mt-6 md:gap-y-2.5">
           {stay.highlights.map((h) => (
             <li key={h} className="flex items-center gap-2 text-sm text-ink/80">
               <CheckIcon className="size-4 shrink-0 text-moss" /> {h}
             </li>
           ))}
         </ul>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+        <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 md:mt-8">
           <button
             onClick={() => openConcierge(stay.id)}
-            className="flex items-center gap-2 rounded-full bg-sunset px-6 py-3.5 font-semibold text-white shadow-lg shadow-sunset/25 transition hover:-translate-y-0.5 hover:bg-ember"
+            className="flex items-center justify-center gap-2 rounded-full bg-sunset px-6 py-3.5 font-semibold text-white shadow-lg shadow-sunset/25 transition hover:-translate-y-0.5 hover:bg-ember"
           >
             <WhatsAppIcon /> Check dates
           </button>
-          <a href="#pricing" className="text-sm text-ink/55 hover:text-forest">
+          <a href="#pricing" className="py-1 text-sm text-ink/55 hover:text-forest">
             {fromPrice(stay.id) ? (
               <>
                 from <b className="font-display text-xl font-normal text-forest">{inr(fromPrice(stay.id)!)}</b> / night

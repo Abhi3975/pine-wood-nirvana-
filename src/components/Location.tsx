@@ -75,7 +75,7 @@ export default function Location() {
               </div>
             ))}
           </dl>
-          <a href="#map" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-sunset hover:underline">
+          <a href="#map" className="mt-6 inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-sunset hover:underline">
             See it on the map ↓
           </a>
         </div>

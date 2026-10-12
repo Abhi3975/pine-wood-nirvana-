@@ -37,7 +37,7 @@ export default function VideoGallery() {
                   setCurrent(galleryVideos.find((v) => v.tag === t)!);
                   setPlaying(false);
                 }}
-                className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition ${
+                className={`shrink-0 min-h-10 rounded-full px-4 py-2 text-sm font-medium transition ${
                   tab === t ? "bg-cream text-forest" : "text-white/75 hover:text-white"
                 }`}
               >

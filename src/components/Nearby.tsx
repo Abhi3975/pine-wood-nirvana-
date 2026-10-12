@@ -16,13 +16,11 @@ export default function Nearby() {
           </p>
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {nearby.map((n, i) => (
+        <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3">
+          {nearby.map((n) => (
             <li
               key={n.name}
-              className="flex gap-4 rounded-3xl bg-white p-5 ring-1 ring-forest/10 md:p-6"
-              data-reveal
-              style={{ "--reveal-delay": `${(i % 3) * 80}ms` } as React.CSSProperties}
+              className="flex w-[78%] shrink-0 snap-start gap-4 rounded-3xl bg-white p-5 ring-1 ring-forest/10 sm:w-auto md:p-6"
             >
               <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-sand text-forest">
                 <PinIcon />

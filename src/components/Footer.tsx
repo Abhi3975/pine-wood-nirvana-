@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Closing call to action */}
       <div className="relative overflow-hidden">
         <Img src="/images/evening-cottages.webp" alt="" fill sizes="100vw" className="object-cover opacity-35" />
-        <div className="relative mx-auto max-w-4xl px-4 py-24 text-center md:py-32" data-reveal>
+        <div className="relative mx-auto max-w-4xl px-4 py-16 text-center md:py-32" data-reveal>
           <h2 className="font-display text-3xl font-light md:text-5xl">The pines are waiting.</h2>
           <p className="mx-auto mt-5 max-w-xl text-base md:text-lg text-white/80">
             Message us your dates and we&apos;ll confirm your cottage in minutes — no booking fees, no middlemen.
@@ -33,16 +33,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-10 border-t border-white/10 px-4 py-14 md:grid-cols-3 md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 border-t border-white/10 px-4 py-10 md:grid-cols-3 md:gap-10 md:px-8 md:py-14">
         <div>
           <Img src="/images/logo.webp" alt="GhumoG Bharke" width={160} height={100} className="h-20 w-auto" />
           <p className="mt-4 font-display text-xl">{site.fullName}</p>
           <p className="text-sm text-white/60">By {site.brand} · {site.tagline}</p>
         </div>
-        <div className="space-y-3 text-sm">
+        <div className="space-y-1 text-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Contact</p>
           {site.phones.map((p) => (
-            <a key={p} href={telHref(p)} className="flex items-center gap-2 text-white/85 hover:text-sunset">
+            <a key={p} href={telHref(p)} className="flex min-h-10 items-center gap-2 text-white/85 hover:text-sunset">
               <PhoneIcon className="size-4" /> {p}
             </a>
           ))}
@@ -50,20 +50,20 @@ export default function Footer() {
             href={waHref("Hi! I have a question about Pine Wood Nirvana.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white/85 hover:text-sunset"
+            className="flex min-h-10 items-center gap-2 text-white/85 hover:text-sunset"
           >
             <WhatsAppIcon className="size-4" /> WhatsApp us
           </a>
-          <a href={`mailto:${site.email}`} className="flex items-center gap-2 text-white/85 hover:text-sunset">
+          <a href={`mailto:${site.email}`} className="flex min-h-10 items-center gap-2 text-white/85 hover:text-sunset">
             <MailIcon className="size-4" /> {site.email}
           </a>
         </div>
-        <div className="space-y-3 text-sm">
+        <div className="space-y-1 text-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Find us</p>
           <p className="flex items-start gap-2 text-white/85">
             <PinIcon className="mt-0.5 size-4 shrink-0" /> {site.address}
           </p>
-          <a href={site.parentSite} target="_blank" rel="noopener noreferrer" className="block text-white/85 hover:text-sunset">
+          <a href={site.parentSite} target="_blank" rel="noopener noreferrer" className="flex min-h-10 items-center text-white/85 hover:text-sunset">
             More GhumoG stays → ghumog.in
           </a>
           <div className="flex gap-2 pt-2">

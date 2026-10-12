@@ -10,7 +10,7 @@ export default function MapSection() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         allowFullScreen
-        className="block h-[420px] w-full border-0 md:h-[560px]"
+        className="block h-[300px] w-full border-0 md:h-[560px]"
       />
 
       {/* Info card: floats over the map on desktop, sits under it on phones */}
@@ -62,7 +62,7 @@ export default function MapSection() {
                 href={mapsOpenHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-center text-sm font-medium text-forest underline-offset-4 hover:underline sm:col-span-2"
+                className="py-2.5 text-center text-sm font-medium text-forest underline-offset-4 hover:underline sm:col-span-2"
               >
                 Open in Google Maps
               </a>

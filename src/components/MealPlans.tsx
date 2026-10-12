@@ -83,9 +83,9 @@ export default function MealPlans() {
         <h3 className="mb-5 font-display text-2xl text-forest md:text-3xl" data-reveal>
           Where you&apos;ll eat
         </h3>
-        <ul className="grid gap-4 sm:grid-cols-3" data-reveal>
+        <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0" data-reveal>
           {diningSpots.map((d) => (
-            <li key={d.title} className="group relative aspect-[4/3] overflow-hidden rounded-3xl sm:aspect-[4/5] lg:aspect-[4/3]">
+            <li key={d.title} className="group relative aspect-[4/3] w-[80%] shrink-0 snap-start overflow-hidden rounded-3xl sm:w-auto sm:aspect-[4/5] lg:aspect-[4/3]">
               <Img
                 src={d.img}
                 alt={d.title}

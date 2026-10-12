@@ -113,7 +113,7 @@ export default function Concierge() {
             <button
               onClick={() => setNudge(false)}
               aria-label="Dismiss"
-              className="absolute right-1 top-1 grid size-7 place-items-center rounded-full text-ink/40 hover:text-ink"
+              className="absolute right-0 top-0 grid size-10 place-items-center rounded-full text-ink/40 hover:text-ink"
             >
               <CloseIcon className="size-3.5" />
             </button>
@@ -170,7 +170,7 @@ export default function Concierge() {
 
             <Bubble>
               <p className="mb-2 font-semibold">When are you coming?</p>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid gap-2 min-[400px]:grid-cols-2">
                 <label className="block">
                   <span className="text-xs text-ink/60">Check-in</span>
                   <input
@@ -185,7 +185,7 @@ export default function Concierge() {
                         setCheckOut(iso(o));
                       }
                     }}
-                    className="mt-1 w-full rounded-xl border border-black/10 px-2.5 py-2 outline-none focus:border-pine"
+                    className="mt-1 w-full rounded-xl border border-black/10 px-2.5 py-2 text-base outline-none focus:border-pine"
                   />
                 </label>
                 <label className="block">
@@ -195,7 +195,7 @@ export default function Concierge() {
                     value={checkOut}
                     min={checkIn}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    className="mt-1 w-full rounded-xl border border-black/10 px-2.5 py-2 outline-none focus:border-pine"
+                    className="mt-1 w-full rounded-xl border border-black/10 px-2.5 py-2 text-base outline-none focus:border-pine"
                   />
                 </label>
               </div>
@@ -224,7 +224,7 @@ export default function Concierge() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name (optional)"
-                className="mt-3 w-full rounded-xl border border-black/10 px-3 py-2 outline-none focus:border-pine"
+                className="mt-3 w-full rounded-xl border border-black/10 px-3 py-2 text-base outline-none focus:border-pine"
               />
             </Bubble>
 
@@ -286,7 +286,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
     <button
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full px-3 py-1.5 text-xs font-medium ring-1 transition ${
+      className={`min-h-9 rounded-full px-3 py-1.5 text-sm font-medium ring-1 transition ${
         active ? "bg-pine text-white ring-pine" : "bg-white text-ink ring-black/15 hover:ring-pine"
       }`}
     >

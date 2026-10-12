@@ -83,7 +83,7 @@ export default function ContactForm() {
             else you need.
           </p>
 
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-8 hidden space-y-3 sm:block">
             <li>
               <a href={telHref()} className="flex items-center gap-4 rounded-2xl bg-white p-4 ring-1 ring-forest/10 transition hover:ring-forest/30">
                 <span className="grid size-11 shrink-0 place-items-center rounded-full bg-forest text-white">
@@ -204,7 +204,7 @@ export default function ContactForm() {
                       key={t}
                       onClick={() => setF((p) => ({ ...p, topic: t }))}
                       aria-pressed={f.topic === t}
-                      className={`rounded-full px-3.5 py-2 text-sm font-medium ring-1 transition ${
+                      className={`min-h-10 rounded-full px-3.5 py-2 text-sm font-medium ring-1 transition ${
                         f.topic === t ? "bg-forest text-white ring-forest" : "bg-white text-ink/75 ring-forest/15 hover:ring-forest/40"
                       }`}
                     >

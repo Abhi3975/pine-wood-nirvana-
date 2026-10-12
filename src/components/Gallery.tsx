@@ -10,6 +10,7 @@ const tabs = ["All", "Resort", "Rooms", "Evenings"] as const;
 export default function Gallery() {
   const [tab, setTab] = useState<(typeof tabs)[number]>("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false); // phones start with 6 photos
   const touchX = useRef<number | null>(null);
   const items: GalleryItem[] = tab === "All" ? gallery : gallery.filter((g) => g.tag === tab);
 
@@ -44,7 +45,7 @@ export default function Gallery() {
               href={socials.instagram.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+              className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
             >
               <InstagramIcon className="size-4" /> Follow {socials.instagram.handle}
             </a>
@@ -54,7 +55,7 @@ export default function Gallery() {
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                className={`min-h-10 rounded-full px-4 py-2 text-sm font-medium transition ${
                   tab === t ? "bg-forest text-white" : "text-ink/70 hover:text-forest"
                 }`}
               >
@@ -69,7 +70,9 @@ export default function Gallery() {
             <button
               key={g.src}
               onClick={() => setLightbox(i)}
-              className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl"
+              className={`group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl ${
+                !showAll && i >= 6 ? "hidden md:block" : ""
+              }`}
             >
               <Img
                 src={g.src}
@@ -81,6 +84,14 @@ export default function Gallery() {
             </button>
           ))}
         </div>
+        {!showAll && items.length > 6 && (
+          <button
+            onClick={() => setShowAll(true)}
+            className="mt-5 w-full rounded-2xl bg-white py-3.5 font-semibold text-forest ring-1 ring-forest/15 md:hidden"
+          >
+            Show all {items.length} photos
+          </button>
+        )}
       </div>
 
       {lightbox !== null && items[lightbox] && (
