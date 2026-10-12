@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Img from "@/components/Img";
-import { stays, type Stay } from "@/lib/site";
+import { inr, pricing, stays, type Stay } from "@/lib/site";
 import { openConcierge } from "./Concierge";
 import { CheckIcon, ChevronIcon, UsersIcon, WhatsAppIcon } from "./icons";
 
@@ -47,6 +47,8 @@ export default function Stays() {
     </section>
   );
 }
+
+const fromPrice = (id: string) => pricing.plans.find((p) => p.stayId === id)?.from;
 
 function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
   const track = useRef<HTMLDivElement>(null);
@@ -129,7 +131,15 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
           >
             <WhatsAppIcon /> Check dates
           </button>
-          <span className="text-sm text-ink/55">Best rates when you book direct</span>
+          <a href="#pricing" className="text-sm text-ink/55 hover:text-forest">
+            {fromPrice(stay.id) ? (
+              <>
+                from <b className="font-display text-xl font-normal text-forest">{inr(fromPrice(stay.id)!)}</b> / night
+              </>
+            ) : (
+              "Best rates when you book direct"
+            )}
+          </a>
         </div>
       </div>
     </article>

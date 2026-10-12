@@ -14,6 +14,7 @@ import Img from "@/components/Img";
 import Location from "@/components/Location";
 import MobileBar from "@/components/MobileBar";
 import Nearby from "@/components/Nearby";
+import Pricing from "@/components/Pricing";
 import Reveal from "@/components/Reveal";
 import Reviews from "@/components/Reviews";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -32,6 +33,7 @@ export default function Home() {
         <DayHere />
         <Experiences />
         <WaysToStay />
+        <Pricing />
         <Film />
         <Gallery />
         <Reviews />

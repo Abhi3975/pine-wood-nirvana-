@@ -310,3 +310,47 @@ export const reviews = [
     text: "The family-friendly atmosphere and amenities made it the perfect choice for us. The hotel staff was exceptionally friendly and attentive.",
   },
 ];
+
+// Indicative "from" rates per night, room only, before taxes — taken from the resort's
+// EaseMyTrip listing (Oct 2026). Replace with the client's own rate card when available.
+export const pricing = {
+  note: "Indicative starting rates per night for 2 guests, room only, plus taxes. Weekends, holidays and peak season may differ — we confirm your exact rate on WhatsApp.",
+  updated: "Oct 2026",
+  plans: [
+    {
+      stayId: "pine",
+      name: "Pine Wood Cottage",
+      from: 2276,
+      taxes: 132,
+      guests: "2 guests",
+      perks: ["All-wood cottage with verandah", "Free Wi-Fi & parking", "Drinking water", "Pet friendly"],
+      featured: false,
+    },
+    {
+      stayId: "king",
+      name: "Luxury King Cottage",
+      from: 2598,
+      taxes: 150,
+      guests: "2 guests",
+      perks: ["King bed & kitchenette", "Marble bathroom", "Free Wi-Fi & parking", "Forest-facing windows"],
+      featured: true,
+    },
+    {
+      stayId: "quad",
+      name: "Luxury Quad Cottage",
+      from: 3233,
+      taxes: 188,
+      guests: "Up to 4 guests",
+      perks: ["Two double beds & lounge", "Private forest balcony", "Free Wi-Fi & parking", "Best value for families"],
+      featured: false,
+    },
+  ],
+  extras: [
+    { title: "Meals", text: "Breakfast, lunch and dinner from our restaurant — add to any stay." },
+    { title: "Bonfire evening", text: "Ask us to light one up for your group under the pines." },
+    { title: "Celebrations", text: "Birthday or anniversary decor, cakes and set-ups on request." },
+    { title: "Luxury Villa & groups", text: "Whole-villa and multi-cottage bookings at special group rates." },
+  ],
+};
+
+export const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;

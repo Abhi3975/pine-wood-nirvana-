@@ -8,6 +8,7 @@ import { CloseIcon, InstagramIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./i
 
 const links = [
   { href: "#stays", label: "Stays" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#day", label: "A day here" },
   { href: "#experiences", label: "Experiences" },
   { href: "#plan", label: "Plan a trip" },
@@ -59,7 +60,7 @@ export default function Header() {
             </span>
           </a>
 
-          <nav className="hidden items-center gap-6 xl:flex">
+          <nav className="hidden items-center gap-5 xl:flex">
             {links.map((l) => (
               <a
                 key={l.href}
