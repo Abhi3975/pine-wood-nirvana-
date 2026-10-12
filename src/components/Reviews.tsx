@@ -8,7 +8,7 @@ export default function Reviews() {
       <div className="mx-auto mb-10 grid max-w-7xl gap-6 px-4 md:mb-14 md:grid-cols-2 md:items-end md:px-8" data-reveal>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Guest reviews</p>
-          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">In our guests&apos; words.</h2>
+          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">In our guests&apos; words.</h2>
         </div>
         <a
           href={ta.href}
@@ -44,7 +44,7 @@ export default function Reviews() {
             <h3 className="mt-4 font-display text-xl text-forest">{r.title}</h3>
             <blockquote className="mt-3 flex-1 leading-relaxed text-ink/75">&ldquo;{r.text}&rdquo;</blockquote>
             <footer className="mt-6 flex items-center gap-3 border-t border-forest/10 pt-5">
-              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-forest font-display text-base md:text-lg text-white">
+              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-forest font-display text-[15px] md:text-base text-white">
                 {r.name[0]}
               </span>
               <span className="min-w-0">

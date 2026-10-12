@@ -12,7 +12,7 @@ export default function About() {
     <section id="about" className="overflow-hidden bg-forest px-4 py-16 text-white md:px-8 md:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="relative" data-reveal>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[5/4] lg:aspect-[4/5]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl md:aspect-[5/4] lg:aspect-[4/3]">
             <Img src="/images/evening-cottages.webp" alt="Cottages lit up in the evening" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
           </div>
           <div className="absolute bottom-4 right-4 rounded-2xl bg-cream px-5 py-4 text-forest shadow-2xl">
@@ -23,8 +23,8 @@ export default function About() {
 
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">About {site.brand}</p>
-          <h2 className="font-display text-3xl font-light md:text-4xl">Hosted by people who love the hills.</h2>
-          <p className="mt-5 text-base md:text-lg text-white/75">
+          <h2 className="font-display text-[1.75rem] font-light md:text-3xl">Hosted by people who love the hills.</h2>
+          <p className="mt-5 text-[15px] md:text-base text-white/75">
             Pine Wood Nirvana is part of <b className="text-white">GhumoG Stay</b> by GhumoG Tour Planners — founded by{" "}
             {ghumog.founder}, with {ghumog.years} in travel and hospitality. <i>Har Safar Kuch Khass…</i> isn&apos;t
             just our tagline; it&apos;s how we look after every guest.

@@ -1,6 +1,6 @@
 "use client";
 
-import { getImageProps } from "next/image";
+import { preload } from "react-dom";
 import blur from "@/lib/blur.json";
 import { openConcierge } from "./Concierge";
 import { openFilm } from "./Film";
@@ -9,23 +9,29 @@ import { PinIcon, PlayIcon, StarIcon, WhatsAppIcon } from "./icons";
 const previews = blur as Record<string, string>;
 const heroAlt = "Sunset over the Shimla hills seen through the pines at Pine Wood Nirvana";
 
+// Pre-sized files (scripts/gen-hero.mjs) served straight from the CDN, so the first screen
+// never waits on on-demand image resizing.
+const desktopSet = "/images/hero/valley-960.webp 960w, /images/hero/valley-1440.webp 1440w, /images/hero/valley-1920.webp 1920w";
+const mobileSet = "/images/hero/cottage-480.webp 480w, /images/hero/cottage-750.webp 750w, /images/hero/cottage-1080.webp 1080w";
+
 /** Landscape valley view on wide screens, the red-roof cottage at sunset on phones. */
 function HeroPicture() {
-  const common = { alt: heroAlt, fill: true, priority: true, sizes: "100vw" } as const;
-  const { props: { srcSet: desktop } } = getImageProps({ ...common, src: "/images/hero-valley.webp" });
-  const { props: { srcSet: mobile, ...rest } } = getImageProps({ ...common, src: "/images/hero-cottage.webp" });
+  // Ask the browser to fetch the right hero photo before anything else on the page.
+  preload("/images/hero/valley-1440.webp", { as: "image", imageSrcSet: desktopSet, imageSizes: "100vw", media: "(min-width: 768px)", fetchPriority: "high" });
+  preload("/images/hero/cottage-750.webp", { as: "image", imageSrcSet: mobileSet, imageSizes: "100vw", media: "(max-width: 767px)", fetchPriority: "high" });
   return (
     <picture>
-      <source media="(min-width: 768px)" srcSet={desktop} />
-      <source srcSet={mobile} />
+      <source media="(min-width: 768px)" srcSet={desktopSet} sizes="100vw" />
+      <source srcSet={mobileSet} sizes="100vw" />
       {/* Blurred previews paint instantly while the full photo downloads. */}
       <img
-        {...rest}
+        src="/images/hero/cottage-750.webp"
         alt={heroAlt}
-        className="animate-kenburns bg-[image:var(--blur-m)] bg-cover object-cover md:bg-[image:var(--blur-d)]"
+        fetchPriority="high"
+        decoding="async"
+        className="animate-kenburns absolute inset-0 size-full bg-[image:var(--blur-m)] bg-cover object-cover md:bg-[image:var(--blur-d)]"
         style={
           {
-            ...rest.style,
             "--blur-m": `url(${previews["/images/hero-cottage.webp"]})`,
             "--blur-d": `url(${previews["/images/hero-valley.webp"]})`,
           } as React.CSSProperties
@@ -46,13 +52,13 @@ export default function Hero() {
           <PinIcon className="size-3.5" /> Village Paughat · Shoghi · Shimla
         </p>
         <h1
-          className="animate-fade-up max-w-4xl font-display text-[2.6rem] leading-[0.95] font-light tracking-tight sm:text-6xl md:text-7xl"
+          className="animate-fade-up max-w-4xl font-display text-[2.4rem] leading-[0.95] font-light tracking-tight sm:text-5xl md:text-6xl"
           style={{ animationDelay: "120ms" }}
         >
           Wake up <em className="font-normal text-sunset">in the pines.</em>
         </h1>
         <p
-          className="animate-fade-up mt-6 max-w-xl text-base md:text-lg text-white/85 md:text-xl"
+          className="animate-fade-up mt-6 max-w-xl text-[15px] md:text-base text-white/85 md:text-xl"
           style={{ animationDelay: "240ms" }}
         >
           Luxury cottages, a forest-edge pool and bonfire nights — tucked 2.5 km off the Shoghi highway, away from the

@@ -30,14 +30,14 @@ export default function DayHere() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 max-w-2xl md:mb-16" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">A day here</p>
-          <h2 className="font-display text-3xl font-light md:text-5xl">From misty mornings to firelit nights.</h2>
+          <h2 className="font-display text-[1.75rem] font-light md:text-4xl">From misty mornings to firelit nights.</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 lg:gap-20">
           {/* Sticky photo stack — desktop only */}
           <div className="hidden lg:block">
             <div className="sticky top-28">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
               {dayHere.map((d, i) => (
                 <Img
                   key={d.img}
@@ -50,7 +50,7 @@ export default function DayHere() {
                   }`}
                 />
               ))}
-              <span className="absolute left-5 top-5 rounded-full bg-black/40 px-4 py-1.5 font-display text-base md:text-lg backdrop-blur">
+              <span className="absolute left-5 top-5 rounded-full bg-black/40 px-4 py-1.5 font-display text-[15px] md:text-base backdrop-blur">
                   {dayHere[active].time}
                 </span>
               </div>

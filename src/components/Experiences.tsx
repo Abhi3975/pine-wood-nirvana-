@@ -8,9 +8,9 @@ export default function Experiences() {
         <div className="mb-10 grid px-4 md:mb-14 md:px-8 gap-6 md:grid-cols-2 md:items-end" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Experiences</p>
-            <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Days by the pool, nights by the fire.</h2>
+            <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Days by the pool, nights by the fire.</h2>
           </div>
-          <p className="text-base md:text-lg text-ink/70 md:pb-2">
+          <p className="text-[15px] md:text-base text-ink/70 md:pb-2">
             Fresh mountain air, pine forests all around and everything you need for a slow weekend — without ever
             getting back in the car.
           </p>
@@ -21,7 +21,7 @@ export default function Experiences() {
           {experiences.map((x) => (
             <figure
               key={x.title}
-              className="group relative aspect-[4/5] w-[78%] shrink-0 snap-start overflow-hidden rounded-3xl bg-forest sm:w-auto"
+              className="group relative aspect-[4/5] w-[78%] shrink-0 snap-start overflow-hidden rounded-3xl bg-forest sm:w-auto sm:aspect-[4/3]"
             >
               <Img
                 src={x.img}

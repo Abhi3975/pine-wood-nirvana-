@@ -11,8 +11,8 @@ export default function MealPlans() {
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Meal plans</p>
         <div className="grid gap-5 md:grid-cols-2 md:items-end">
-          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Eat well in the forest.</h2>
-          <p className="text-base md:text-lg text-ink/70 md:pb-2">
+          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Eat well in the forest.</h2>
+          <p className="text-[15px] md:text-base text-ink/70 md:pb-2">
             Our in-house restaurant cooks fresh, home-style meals. Pick the plan that suits your trip — you can add it
             to any cottage.
           </p>
@@ -80,7 +80,7 @@ export default function MealPlans() {
 
       {/* Where you'll eat */}
       <div className="mx-auto mt-14 max-w-7xl px-4 md:mt-20 md:px-8">
-        <h3 className="mb-5 font-display text-2xl text-forest md:text-3xl" data-reveal>
+        <h3 className="mb-5 font-display text-2xl text-forest md:text-2xl" data-reveal>
           Where you&apos;ll eat
         </h3>
         <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0" data-reveal>

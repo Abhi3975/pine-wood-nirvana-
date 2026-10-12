@@ -141,7 +141,7 @@ export default function Concierge() {
               <Image src="/images/logo.webp" alt="" fill sizes="44px" className="object-contain p-1" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="font-display text-base md:text-lg leading-tight">{site.name} Concierge</p>
+              <p className="font-display text-[15px] md:text-base leading-tight">{site.name} Concierge</p>
               <p className="flex items-center gap-1.5 text-xs text-white/70">
                 <span className="size-2 rounded-full bg-[#25D366]" /> Usually replies within minutes
               </p>

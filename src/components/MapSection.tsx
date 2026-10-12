@@ -18,7 +18,7 @@ export default function MapSection() {
         <div className="mx-auto w-full max-w-7xl">
           <div className="rounded-3xl bg-cream p-6 shadow-2xl md:pointer-events-auto md:max-w-md md:p-8" data-reveal>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Find us on Google Maps</p>
-            <h2 className="font-display text-2xl text-forest md:text-3xl">{site.fullName}</h2>
+            <h2 className="font-display text-2xl text-forest md:text-2xl">{site.fullName}</h2>
             <p className="mt-3 flex items-start gap-2 text-ink/70">
               <PinIcon className="mt-0.5 size-5 shrink-0 text-sunset" />
               Paughat, Shoghi, off NH-5, Shimla, Himachal Pradesh 171006

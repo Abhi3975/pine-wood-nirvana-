@@ -10,8 +10,8 @@ export default function Pricing() {
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Pricing</p>
         <div className="grid gap-5 md:grid-cols-2 md:items-end">
-          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Simple, honest rates.</h2>
-          <p className="text-base md:text-lg text-ink/70 md:pb-2">
+          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Simple, honest rates.</h2>
+          <p className="text-[15px] md:text-base text-ink/70 md:pb-2">
             Book direct on WhatsApp for our best price — no booking fees, no middlemen. Rates start from:
           </p>
         </div>

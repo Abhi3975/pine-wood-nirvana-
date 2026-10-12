@@ -87,7 +87,7 @@ export default function AvailabilityCalendar() {
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4 md:mb-10" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Availability</p>
-            <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Check dates at a glance.</h2>
+            <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Check dates at a glance.</h2>
           </div>
           <div className="no-scrollbar -mx-4 flex w-[calc(100%+2rem)] gap-2 overflow-x-auto px-4 sm:mx-0 sm:w-auto sm:px-0" role="tablist">
             {stays.map((s) => (

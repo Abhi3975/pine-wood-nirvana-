@@ -21,9 +21,9 @@ export default function VideoStories() {
       <div className="mx-auto mb-10 grid max-w-7xl gap-5 px-4 md:mb-14 md:grid-cols-2 md:items-end md:px-8" data-reveal>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Guest stories</p>
-          <h2 className="font-display text-3xl font-light md:text-5xl">See it, hear it, feel it.</h2>
+          <h2 className="font-display text-[1.75rem] font-light md:text-4xl">See it, hear it, feel it.</h2>
         </div>
-        <p className="text-base md:text-lg text-white/70 md:pb-2">
+        <p className="text-[15px] md:text-base text-white/70 md:pb-2">
           {videoTestimonials.length
             ? "Short videos from Pine Wood Nirvana — and from the guests who've stayed with us. Tap to play."
             : "Short videos from Pine Wood Nirvana — tap to play. Stayed with us? Your story could be next."}
@@ -35,7 +35,7 @@ export default function VideoStories() {
         data-reveal
       >
         {cards.map((c) => (
-          <li key={c.id} className="w-[72%] shrink-0 snap-start sm:w-[45%] md:w-[300px]">
+          <li key={c.id} className="w-[72%] shrink-0 snap-start sm:w-[45%] md:w-[250px]">
             <div className="relative aspect-[9/16] overflow-hidden rounded-3xl bg-black ring-1 ring-white/10">
               {playing === c.id ? (
                 <iframe
@@ -64,7 +64,7 @@ export default function VideoStories() {
                     </span>
                   )}
                   <span className="absolute inset-x-0 bottom-0 p-5">
-                    {c.quote && <span className="mb-2 block font-display text-base md:text-lg leading-snug">&ldquo;{c.quote}&rdquo;</span>}
+                    {c.quote && <span className="mb-2 block font-display text-[15px] md:text-base leading-snug">&ldquo;{c.quote}&rdquo;</span>}
                     <span className="block font-semibold">{c.heading}</span>
                     <span className="block text-sm text-white/65">{c.sub}</span>
                   </span>
@@ -75,7 +75,7 @@ export default function VideoStories() {
         ))}
 
         {/* Invite guests to add their own story */}
-        <li className="w-[72%] shrink-0 snap-start sm:w-[45%] md:w-[300px]">
+        <li className="w-[72%] shrink-0 snap-start sm:w-[45%] md:w-[250px]">
           <div className="flex aspect-[9/16] flex-col justify-between rounded-3xl border border-dashed border-white/25 bg-white/5 p-6">
             <QuoteIcon className="size-10 text-sunset" />
             <div>

@@ -14,8 +14,8 @@ export default function Stays() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 max-w-2xl md:mb-14" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Stays</p>
-          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Three ways to stay in the forest.</h2>
-          <p className="mt-3 text-base text-ink/70 md:mt-5 md:text-lg">
+          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Three ways to stay in the forest.</h2>
+          <p className="mt-3 text-[15px] text-ink/70 md:mt-5 md:text-base">
             Every cottage sits among tall pines with its own path, its own view and nothing but birdsong for company.
             Pick one — we&apos;ll confirm availability on WhatsApp.
           </p>
@@ -50,7 +50,7 @@ export default function Stays() {
           data-reveal
         >
           <div>
-            <h3 className="font-display text-2xl text-forest md:text-3xl">Coming with a big group?</h3>
+            <h3 className="font-display text-2xl text-forest md:text-2xl">Coming with a big group?</h3>
             <p className="mt-2 max-w-xl text-ink/70">
               Ask about our <b>Luxury Villa</b> — ideal for families, friends&apos; getaways and celebrations, with the
               lawn, bonfire and banquet hall at your disposal.
@@ -87,9 +87,9 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <div
           ref={track}
           onScroll={(e) => setIndex(Math.round(e.currentTarget.scrollLeft / e.currentTarget.clientWidth))}
-          className="no-scrollbar flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto rounded-3xl bg-sand"
+          className="no-scrollbar flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto rounded-3xl bg-sand md:aspect-[16/10]"
         >
-          {stay.images.map((img, i) => (
+          {stay.images.map((img) => (
             <div key={img.src} className="relative h-full w-full shrink-0 snap-center">
               <Img
                 src={img.src}
@@ -97,7 +97,6 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
                 fill
                 sizes="(min-width: 768px) 58vw, 100vw"
                 className="object-cover"
-                loading={i === 0 ? "eager" : "lazy"}
               />
             </div>
           ))}
@@ -133,8 +132,8 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-pine/10 px-3 py-1 text-xs font-semibold text-pine">
           <UsersIcon className="size-4" /> {stay.guests}
         </p>
-        <h3 className="font-display text-2xl text-forest md:text-4xl">{stay.name}</h3>
-        <p className="mt-2 text-base leading-relaxed text-ink/70 md:mt-4 md:text-lg">{stay.blurb}</p>
+        <h3 className="font-display text-2xl text-forest md:text-3xl">{stay.name}</h3>
+        <p className="mt-2 text-[15px] leading-relaxed text-ink/70 md:mt-4 md:text-base">{stay.blurb}</p>
         <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 md:mt-6 md:gap-y-2.5">
           {stay.highlights.map((h) => (
             <li key={h} className="flex items-center gap-2 text-sm text-ink/80">

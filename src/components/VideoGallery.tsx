@@ -26,7 +26,7 @@ export default function VideoGallery() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6 md:mb-10" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Video gallery</p>
-            <h2 className="font-display text-3xl font-light md:text-5xl">Watch before you go.</h2>
+            <h2 className="font-display text-[1.75rem] font-light md:text-4xl">Watch before you go.</h2>
           </div>
           <div className="no-scrollbar flex max-w-full gap-1 overflow-x-auto rounded-full bg-white/10 p-1">
             {tabs.map((t) => (
@@ -48,7 +48,7 @@ export default function VideoGallery() {
         </div>
 
         {/* Main player */}
-        <div className="relative aspect-video overflow-hidden rounded-3xl bg-black" data-reveal>
+        <div className="relative mx-auto aspect-video max-w-4xl overflow-hidden rounded-3xl bg-black" data-reveal>
           {playing ? (
             <iframe
               key={current.id}
@@ -65,15 +65,15 @@ export default function VideoGallery() {
               <span className="absolute left-1/2 top-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-forest shadow-2xl transition group-hover:scale-110 md:size-20">
                 <PlayIcon className="size-7 translate-x-0.5" />
               </span>
-              <span className="absolute inset-x-0 bottom-0 p-5 text-left font-display text-xl md:p-8 md:text-3xl">{current.title}</span>
+              <span className="absolute inset-x-0 bottom-0 p-5 text-left font-display text-xl md:p-8 md:text-2xl">{current.title}</span>
             </button>
           )}
         </div>
 
         {/* Thumbnails */}
-        <ul className="no-scrollbar mt-4 flex snap-x gap-3 overflow-x-auto pb-1 md:mt-5 md:gap-4">
+        <ul className="no-scrollbar mx-auto mt-4 flex max-w-4xl snap-x gap-3 overflow-x-auto pb-1 md:mt-5 md:gap-4">
           {list.map((v) => (
-            <li key={v.id} className="w-[46%] shrink-0 snap-start sm:w-[30%] lg:w-[23%]">
+            <li key={v.id} className="w-[46%] shrink-0 snap-start sm:w-[30%] lg:w-[24%]">
               <button
                 onClick={() => pick(v)}
                 aria-current={v.id === current.id}

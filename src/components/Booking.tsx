@@ -145,8 +145,8 @@ export default function Booking() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mb-8 max-w-2xl md:mb-12" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Book online</p>
-          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Reserve your cottage.</h2>
-          <p className="mt-3 text-base text-ink/70 md:text-lg">
+          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Reserve your cottage.</h2>
+          <p className="mt-3 text-[15px] text-ink/70 md:text-base">
             Pick your dates, pay a {bookingRules.advancePercent}% advance securely by UPI, card or netbanking, and pay the
             rest at the resort.
           </p>
@@ -157,7 +157,7 @@ export default function Booking() {
             <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#25D366] text-white">
               <CheckIcon className="size-8" />
             </span>
-            <h3 className="mt-5 font-display text-2xl text-forest md:text-3xl">
+            <h3 className="mt-5 font-display text-2xl text-forest md:text-2xl">
               {done.demo ? "Demo booking complete" : "Booking confirmed!"}
             </h3>
             <p className="mt-2 text-ink/70">

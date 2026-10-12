@@ -13,15 +13,15 @@ export default function Location() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:gap-16">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Getting here</p>
-          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Close to Shimla, far from the noise.</h2>
-          <p className="mt-5 flex items-start gap-2 text-base md:text-lg text-ink/70">
+          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Close to Shimla, far from the noise.</h2>
+          <p className="mt-5 flex items-start gap-2 text-[15px] md:text-base text-ink/70">
             <PinIcon className="mt-1 size-5 shrink-0 text-sunset" /> {site.address}
           </p>
 
           <ol className="mt-10 space-y-6">
             {steps.map((s, i) => (
               <li key={s.t} className="flex gap-4">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-forest font-display text-base md:text-lg text-white">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-forest font-display text-[15px] md:text-base text-white">
                   {i + 1}
                 </span>
                 <div>
