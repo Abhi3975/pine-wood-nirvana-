@@ -89,6 +89,12 @@ export default function Pricing() {
           >
             <WhatsAppIcon className="size-4" /> Get full rate card
           </a>
+          <a
+            href="#book"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-semibold text-white hover:bg-pine"
+          >
+            Book & pay online →
+          </a>
         </div>
       </div>
     </section>

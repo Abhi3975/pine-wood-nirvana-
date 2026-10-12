@@ -53,7 +53,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${manrope.variable} antialiased`}>
       <head>
         {/* Lets CSS hide reveal-on-scroll content only when JS will reveal it. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <script
+          dangerouslySetInnerHTML={{
+            // Runs before the page paints: mark JS on, and always open on the hero — drop any
+            // #section from the address and stop the browser restoring an old scroll position.
+            __html:
+              "document.documentElement.classList.add('js');" +
+              "try{history.scrollRestoration='manual';if(location.hash)history.replaceState(null,'',location.pathname+location.search)}catch(e){}",
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body>{children}</body>

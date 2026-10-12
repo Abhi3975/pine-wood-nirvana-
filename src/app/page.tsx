@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Blog from "@/components/Blog";
+import Booking from "@/components/Booking";
 import Concierge from "@/components/Concierge";
 import ContactForm from "@/components/ContactForm";
 import DayHere from "@/components/DayHere";
@@ -41,6 +42,7 @@ export default function Home() {
         <WaysToStay />
         <Pricing />
         <MealPlans />
+        <Booking />
         <Film />
         <Gallery />
         <VideoGallery />

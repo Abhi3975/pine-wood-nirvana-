@@ -10,9 +10,10 @@ import { CloseIcon, InstagramIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./i
 const links: { href: string; label: string; phoneOnly?: boolean }[] = [
   { href: "#stays", label: "Stays" },
   { href: "#pricing", label: "Pricing" },
+  { href: "#book", label: "Book online" },
   { href: "#day", label: "A day here", phoneOnly: true },
-  { href: "#experiences", label: "Experiences" },
-  { href: "#plan", label: "Plan a trip" },
+  { href: "#experiences", label: "Experiences", phoneOnly: true },
+  { href: "#plan", label: "Plan a trip", phoneOnly: true },
   { href: "#gallery", label: "Gallery" },
   { href: "#reviews", label: "Reviews" },
   { href: "#nearby", label: "Nearby", phoneOnly: true },
