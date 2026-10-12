@@ -346,7 +346,7 @@ export const pricing = {
     },
   ],
   extras: [
-    { title: "Meals", text: "Breakfast, lunch and dinner from our restaurant — add to any stay." },
+    { title: "Meal plans", text: "Breakfast, half-board or all meals from our restaurant — see the plans below." },
     { title: "Bonfire evening", text: "Ask us to light one up for your group under the pines." },
     { title: "Celebrations", text: "Birthday or anniversary decor, cakes and set-ups on request." },
     { title: "Luxury Villa & groups", text: "Whole-villa and multi-cottage bookings at special group rates." },
@@ -354,3 +354,51 @@ export const pricing = {
 };
 
 export const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
+
+// The four standard Indian hotel meal plans. Prices aren't published anywhere yet:
+// set `addPerPerson` (₹ per adult per night, on top of the room rate) when the client
+// shares them; null shows "Ask for rate".
+export const mealPlans = [
+  {
+    code: "EP",
+    name: "Room only",
+    short: "Room only",
+    text: "Just the stay — order anything you like from our restaurant, whenever you like.",
+    includes: ["À la carte restaurant", "Tea & coffee on order"],
+    addPerPerson: null as number | null,
+    featured: false,
+  },
+  {
+    code: "CP",
+    name: "With breakfast",
+    short: "Breakfast",
+    text: "Start every day with a hot breakfast and a valley view.",
+    includes: ["Daily breakfast", "Tea & coffee"],
+    addPerPerson: null as number | null,
+    featured: false,
+  },
+  {
+    code: "MAP",
+    name: "Breakfast + dinner",
+    short: "Breakfast + dinner",
+    text: "Explore Shimla by day, come home to a warm dinner by the fire.",
+    includes: ["Daily breakfast", "Dinner", "Tea & coffee"],
+    addPerPerson: null as number | null,
+    featured: true,
+  },
+  {
+    code: "AP",
+    name: "All meals",
+    short: "All meals",
+    text: "Breakfast, lunch and dinner — nothing to plan but your next nap.",
+    includes: ["Breakfast", "Lunch", "Dinner", "Tea & coffee"],
+    addPerPerson: null as number | null,
+    featured: false,
+  },
+];
+
+export const diningSpots = [
+  { title: "The dining hall", text: "A warm timber hall for family-style meals.", img: "/images/banquet.webp" },
+  { title: "Open-air tent", text: "Lunch under the canopy with the hills all around.", img: "/images/dining-tent.webp" },
+  { title: "Fireside dinners", text: "Candles, fairy lights and a crackling bonfire.", img: "/images/firelit-dinner.webp" },
+];

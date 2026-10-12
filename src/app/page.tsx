@@ -12,6 +12,7 @@ import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
 import Img from "@/components/Img";
 import Location from "@/components/Location";
+import MealPlans from "@/components/MealPlans";
 import MobileBar from "@/components/MobileBar";
 import Nearby from "@/components/Nearby";
 import Pricing from "@/components/Pricing";
@@ -34,6 +35,7 @@ export default function Home() {
         <Experiences />
         <WaysToStay />
         <Pricing />
+        <MealPlans />
         <Film />
         <Gallery />
         <Reviews />

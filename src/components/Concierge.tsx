@@ -2,14 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { site, stays, telHref, waHref } from "@/lib/site";
+import { mealPlans, site, stays, telHref, waHref } from "@/lib/site";
 import { CloseIcon, PhoneIcon, WhatsAppIcon } from "./icons";
 
 const OPEN_EVENT = "concierge:open";
 
-/** Open the booking concierge from anywhere, optionally with a stay preselected. */
-export function openConcierge(stayId?: string) {
-  window.dispatchEvent(new CustomEvent(OPEN_EVENT, { detail: { stayId } }));
+type OpenDetail = { stayId?: string; meal?: string };
+
+/** Open the booking concierge from anywhere, optionally with a stay and/or meal plan preselected. */
+export function openConcierge(stayId?: string, meal?: string) {
+  window.dispatchEvent(new CustomEvent<OpenDetail>(OPEN_EVENT, { detail: { stayId, meal } }));
 }
 
 const quickQuestions = [
@@ -38,12 +40,14 @@ export default function Concierge() {
   const [adults, setAdults] = useState(2);
   const [kids, setKids] = useState(0);
   const [name, setName] = useState("");
+  const [meal, setMeal] = useState<string>(""); // "" = not decided yet
   const [nudge, setNudge] = useState(false);
 
   useEffect(() => {
     const onOpen = (e: Event) => {
-      const id = (e as CustomEvent<{ stayId?: string }>).detail?.stayId;
+      const { stayId: id, meal: plan } = (e as CustomEvent<OpenDetail>).detail ?? {};
       if (id) setStay(id);
+      if (plan) setMeal(plan);
       // Suggest tomorrow → +2 nights on first open (computed here, not during SSR).
       setCheckIn((v) => v || daysFromNow(1));
       setCheckOut((v) => v || daysFromNow(3));
@@ -79,6 +83,8 @@ export default function Concierge() {
     `📅 ${pretty(checkIn)} → ${pretty(checkOut)}${nights ? ` (${nights} night${nights > 1 ? "s" : ""})` : ""}`,
     `👥 ${adults} adult${adults > 1 ? "s" : ""}${kids ? `, ${kids} child${kids > 1 ? "ren" : ""}` : ""}`,
   ];
+  const chosenMeal = mealPlans.find((m) => m.code === meal);
+  if (chosenMeal) details.push(`🍽️ Meal plan: ${chosenMeal.name} (${chosenMeal.code})`);
   if (name.trim()) details.push(`🙋 Name: ${name.trim()}`);
   const message = [
     `Hi ${site.name}! 👋`,
@@ -194,6 +200,20 @@ export default function Concierge() {
                 </label>
               </div>
               {!datesValid && checkIn && <p className="mt-2 text-xs text-ember">Check-out must be after check-in.</p>}
+            </Bubble>
+
+            <Bubble>
+              <p className="mb-2 font-semibold">Any meal plan?</p>
+              <div className="flex flex-wrap gap-2">
+                <Chip active={meal === ""} onClick={() => setMeal("")}>
+                  Not sure yet
+                </Chip>
+                {mealPlans.map((m) => (
+                  <Chip key={m.code} active={meal === m.code} onClick={() => setMeal(m.code)}>
+                    {m.short}
+                  </Chip>
+                ))}
+              </div>
             </Bubble>
 
             <Bubble>
