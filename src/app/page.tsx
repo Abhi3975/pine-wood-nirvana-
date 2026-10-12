@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Concierge from "@/components/Concierge";
+import ContactForm from "@/components/ContactForm";
 import DayHere from "@/components/DayHere";
 import Experiences from "@/components/Experiences";
 import FAQ from "@/components/FAQ";
@@ -44,6 +45,7 @@ export default function Home() {
         <About />
         <Founder />
         <FAQ />
+        <ContactForm />
       </main>
       <Footer />
       <MobileBar />

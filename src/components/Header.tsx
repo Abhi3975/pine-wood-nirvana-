@@ -6,10 +6,11 @@ import { site, socials, telHref } from "@/lib/site";
 import { openConcierge } from "./Concierge";
 import { CloseIcon, InstagramIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./icons";
 
-const links = [
+// phoneOnly links appear in the full-screen menu but not in the (already full) desktop bar.
+const links: { href: string; label: string; phoneOnly?: boolean }[] = [
   { href: "#stays", label: "Stays" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#day", label: "A day here" },
+  { href: "#day", label: "A day here", phoneOnly: true },
   { href: "#experiences", label: "Experiences" },
   { href: "#plan", label: "Plan a trip" },
   { href: "#gallery", label: "Gallery" },
@@ -18,6 +19,7 @@ const links = [
   { href: "#location", label: "Location" },
   { href: "#founder", label: "Founder" },
   { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -61,7 +63,7 @@ export default function Header() {
           </a>
 
           <nav className="hidden items-center gap-5 xl:flex">
-            {links.map((l) => (
+            {links.filter((l) => !l.phoneOnly).map((l) => (
               <a
                 key={l.href}
                 href={l.href}

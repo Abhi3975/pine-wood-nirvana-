@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center md:py-32" data-reveal>
           <h2 className="font-display text-4xl font-light md:text-6xl">The pines are waiting.</h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/80">
-            Message us your dates and we&apos;ll confirm your cottage in minutes — no forms, no booking fees.
+            Message us your dates and we&apos;ll confirm your cottage in minutes — no booking fees, no middlemen.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <button
