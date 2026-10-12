@@ -1,16 +1,16 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
+import Img from "@/components/Img";
 import { stays, type Stay } from "@/lib/site";
 import { openConcierge } from "./Concierge";
 import { CheckIcon, ChevronIcon, UsersIcon, WhatsAppIcon } from "./icons";
 
 export default function Stays() {
   return (
-    <section id="stays" className="px-4 py-20 md:px-8 md:py-28">
+    <section id="stays" className="px-4 py-16 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-14 max-w-2xl" data-reveal>
+        <div className="mb-10 max-w-2xl md:mb-14" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Stays</p>
           <h2 className="font-display text-4xl font-light text-forest md:text-6xl">Three ways to stay in the forest.</h2>
           <p className="mt-5 text-lg text-ink/70">
@@ -19,14 +19,14 @@ export default function Stays() {
           </p>
         </div>
 
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-14 md:space-y-24">
           {stays.map((s, i) => (
             <StayCard key={s.id} stay={s} flip={i % 2 === 1} />
           ))}
         </div>
 
         <div
-          className="mt-20 flex flex-col items-start justify-between gap-6 rounded-3xl bg-sand p-8 md:flex-row md:items-center md:p-10"
+          className="mt-14 flex flex-col items-start md:mt-20 justify-between gap-6 rounded-3xl bg-sand p-8 md:flex-row md:items-center md:p-10"
           data-reveal
         >
           <div>
@@ -69,7 +69,7 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         >
           {stay.images.map((img, i) => (
             <div key={img.src} className="relative h-full w-full shrink-0 snap-center">
-              <Image
+              <Img
                 src={img.src}
                 alt={img.alt}
                 fill
@@ -83,17 +83,20 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <button
           onClick={() => go(index - 1)}
           aria-label="Previous photo"
-          className="absolute left-3 top-1/2 grid size-10 -translate-y-1/2 rotate-180 place-items-center rounded-full bg-white/90 text-forest shadow-lg hover:bg-white"
+          className="absolute left-3 top-1/2 hidden size-10 md:grid -translate-y-1/2 rotate-180 place-items-center rounded-full bg-white/90 text-forest shadow-lg hover:bg-white"
         >
           <ChevronIcon />
         </button>
         <button
           onClick={() => go(index + 1)}
           aria-label="Next photo"
-          className="absolute right-3 top-1/2 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-forest shadow-lg hover:bg-white"
+          className="absolute right-3 top-1/2 hidden size-10 md:grid -translate-y-1/2 place-items-center rounded-full bg-white/90 text-forest shadow-lg hover:bg-white"
         >
           <ChevronIcon />
         </button>
+        <span className="absolute right-3 top-3 rounded-full bg-black/45 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+          {index + 1} / {stay.images.length}
+        </span>
         <div className="absolute inset-x-0 bottom-4 flex justify-center gap-1.5">
           {stay.images.map((img, i) => (
             <button

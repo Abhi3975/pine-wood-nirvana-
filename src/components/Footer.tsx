@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Img from "@/components/Img";
 import { site, telHref, waHref } from "@/lib/site";
 import { openConcierge } from "./Concierge";
 import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "./icons";
@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-forest text-white">
       {/* Closing call to action */}
       <div className="relative overflow-hidden">
-        <Image src="/images/red-roof-sunset.webp" alt="" fill sizes="100vw" className="object-cover opacity-35" />
+        <Img src="/images/evening-cottages.webp" alt="" fill sizes="100vw" className="object-cover opacity-35" />
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center md:py-32" data-reveal>
           <h2 className="font-display text-4xl font-light md:text-6xl">The pines are waiting.</h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/80">
@@ -35,7 +35,7 @@ export default function Footer() {
 
       <div className="mx-auto grid max-w-7xl gap-10 border-t border-white/10 px-4 py-14 md:grid-cols-3 md:px-8">
         <div>
-          <Image src="/images/logo.webp" alt="GhumoG Bharke" width={160} height={100} className="h-20 w-auto" />
+          <Img src="/images/logo.webp" alt="GhumoG Bharke" width={160} height={100} className="h-20 w-auto" />
           <p className="mt-4 font-display text-xl">{site.fullName}</p>
           <p className="text-sm text-white/60">By {site.brand} · {site.tagline}</p>
         </div>

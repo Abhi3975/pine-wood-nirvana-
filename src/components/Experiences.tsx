@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Img from "@/components/Img";
 import { amenities, experiences } from "@/lib/site";
 
 export default function Experiences() {
   return (
-    <section id="experiences" className="bg-sand/60 px-4 py-20 md:px-8 md:py-28">
+    <section id="experiences" className="bg-sand/60 py-16 md:py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-14 grid gap-6 md:grid-cols-2 md:items-end" data-reveal>
+        <div className="mb-10 grid px-4 md:mb-14 md:px-8 gap-6 md:grid-cols-2 md:items-end" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Experiences</p>
             <h2 className="font-display text-4xl font-light text-forest md:text-6xl">Days by the pool, nights by the fire.</h2>
@@ -16,19 +16,18 @@ export default function Experiences() {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {experiences.map((x, i) => (
+        {/* Swipeable on phones, a grid from tablet up */}
+        <div className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible md:px-8 lg:grid-cols-3" data-reveal>
+          {experiences.map((x) => (
             <figure
               key={x.title}
-              className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-forest"
-              data-reveal
-              style={{ "--reveal-delay": `${(i % 3) * 100}ms` } as React.CSSProperties}
+              className="group relative aspect-[4/5] w-[78%] shrink-0 snap-start overflow-hidden rounded-3xl bg-forest sm:w-auto"
             >
-              <Image
+              <Img
                 src={x.img}
                 alt={x.title}
                 fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 78vw"
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
@@ -40,7 +39,7 @@ export default function Experiences() {
           ))}
         </div>
 
-        <ul className="mt-14 flex flex-wrap justify-center gap-3" data-reveal>
+        <ul className="mt-10 flex flex-wrap justify-center gap-2.5 px-4 md:mt-14 md:gap-3 md:px-8" data-reveal>
           {amenities.map((a) => (
             <li key={a} className="rounded-full bg-white px-4 py-2 text-sm font-medium text-forest ring-1 ring-forest/10">
               {a}

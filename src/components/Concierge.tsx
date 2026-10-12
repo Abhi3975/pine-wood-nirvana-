@@ -51,11 +51,13 @@ export default function Concierge() {
       setNudge(false);
     };
     window.addEventListener(OPEN_EVENT, onOpen);
-    // A gentle greeting bubble after the guest has had a look around.
-    const timer = setTimeout(() => setNudge(true), 9000);
+    // A gentle greeting bubble after the guest has had a look around; it bows out on its own.
+    const show = setTimeout(() => setNudge(true), 9000);
+    const hide = setTimeout(() => setNudge(false), 19000);
     return () => {
       window.removeEventListener(OPEN_EVENT, onOpen);
-      clearTimeout(timer);
+      clearTimeout(show);
+      clearTimeout(hide);
     };
   }, []);
 
@@ -94,12 +96,22 @@ export default function Concierge() {
       {/* Launcher */}
       <div className="fixed bottom-24 right-4 z-50 flex flex-col items-end gap-3 md:bottom-6 md:right-6">
         {nudge && !open && (
-          <button
-            onClick={() => openConcierge()}
-            className="animate-pop max-w-60 rounded-2xl rounded-br-sm bg-white px-4 py-3 text-left text-sm text-ink shadow-xl ring-1 ring-black/5"
-          >
-            <span className="font-semibold">Namaste! 🙏</span> Planning a trip to Shoghi? Check availability in 30 seconds.
-          </button>
+          <div className="animate-pop relative">
+            <button
+              onClick={() => openConcierge()}
+              className="max-w-60 rounded-2xl rounded-br-sm bg-white py-3 pl-4 pr-8 text-left text-sm text-ink shadow-xl ring-1 ring-black/5"
+            >
+              <span className="font-semibold">Namaste! 🙏</span> Planning a trip to Shoghi? Check availability in 30
+              seconds.
+            </button>
+            <button
+              onClick={() => setNudge(false)}
+              aria-label="Dismiss"
+              className="absolute right-1 top-1 grid size-7 place-items-center rounded-full text-ink/40 hover:text-ink"
+            >
+              <CloseIcon className="size-3.5" />
+            </button>
+          </div>
         )}
         <button
           onClick={() => (open ? setOpen(false) : openConcierge())}
@@ -133,7 +145,7 @@ export default function Concierge() {
             </button>
           </header>
 
-          <div className="flex-1 space-y-4 overflow-y-auto bg-[#efeae2] px-4 py-5 text-sm">
+          <div data-lenis-prevent className="flex-1 space-y-4 overflow-y-auto overscroll-contain bg-[#efeae2] px-4 py-5 text-sm">
             <Bubble>
               Namaste! 🙏 Welcome to <b>{site.fullName}</b>. Tell me what you&apos;re looking for and I&apos;ll send your
               request straight to our team on WhatsApp.

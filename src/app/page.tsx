@@ -1,15 +1,22 @@
-import Image from "next/image";
+import About from "@/components/About";
 import Concierge from "@/components/Concierge";
+import DayHere from "@/components/DayHere";
 import Experiences from "@/components/Experiences";
+import FAQ from "@/components/FAQ";
 import Film from "@/components/Film";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Highlights from "@/components/Highlights";
+import Img from "@/components/Img";
 import Location from "@/components/Location";
 import MobileBar from "@/components/MobileBar";
+import Nearby from "@/components/Nearby";
 import Reveal from "@/components/Reveal";
+import SmoothScroll from "@/components/SmoothScroll";
 import Stays from "@/components/Stays";
+import WaysToStay from "@/components/WaysToStay";
 
 export default function Home() {
   return (
@@ -17,25 +24,32 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Highlights />
         <Welcome />
         <Stays />
+        <DayHere />
         <Experiences />
+        <WaysToStay />
         <Film />
         <Gallery />
+        <Nearby />
         <Location />
+        <About />
+        <FAQ />
       </main>
       <Footer />
       <MobileBar />
       <Concierge />
       <Reveal />
+      <SmoothScroll />
     </>
   );
 }
 
 function Welcome() {
   return (
-    <section className="px-4 py-20 md:px-8 md:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <section className="px-4 py-16 md:px-8 md:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Welcome</p>
           <h2 className="font-display text-4xl leading-tight font-light text-forest md:text-5xl">
@@ -50,10 +64,10 @@ function Welcome() {
         </div>
         <div className="grid grid-cols-2 gap-4" data-reveal>
           <div className="relative mt-12 aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image src="/images/path-cottage.webp" alt="Lantern-lit stone walkway to a cottage" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+            <Img src="/images/path-cottage.webp" alt="Lantern-lit stone walkway to a cottage" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
           </div>
           <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image src="/images/pool-sunset.webp" alt="Pool at sunset beneath the pines" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+            <Img src="/images/pool-sunset.webp" alt="Pool at sunset beneath the pines" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import Img from "@/components/Img";
 import { site } from "@/lib/site";
 import { CloseIcon, PlayIcon } from "./icons";
 
@@ -32,7 +32,7 @@ export default function Film() {
   }, [modal]);
 
   return (
-    <section id="film" className="bg-forest px-4 py-20 text-white md:px-8 md:py-28">
+    <section id="film" className="bg-forest px-4 py-16 text-white md:px-8 md:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6" data-reveal>
           <div>
@@ -50,7 +50,7 @@ export default function Film() {
           aria-label="Play resort film"
           data-reveal
         >
-          <Image
+          <Img
             src="/images/fairy-lights.webp"
             alt="Fairy-lit forest path at Pine Wood Nirvana"
             fill
@@ -73,6 +73,7 @@ export default function Film() {
           onClick={() => setModal(false)}
           role="dialog"
           aria-label="Resort film"
+          data-lenis-prevent
         >
           <button
             onClick={() => setModal(false)}

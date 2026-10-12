@@ -9,7 +9,7 @@ const steps = [
 
 export default function Location() {
   return (
-    <section id="location" className="bg-sand/60 px-4 py-20 md:px-8 md:py-28">
+    <section id="location" className="bg-sand/60 px-4 py-16 md:px-8 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:gap-16">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Getting here</p>

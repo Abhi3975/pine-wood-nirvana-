@@ -1,22 +1,45 @@
 "use client";
 
-import Image from "next/image";
+import { getImageProps } from "next/image";
+import blur from "@/lib/blur.json";
 import { openConcierge } from "./Concierge";
 import { openFilm } from "./Film";
 import { PinIcon, PlayIcon, StarIcon, WhatsAppIcon } from "./icons";
 
+const previews = blur as Record<string, string>;
+const heroAlt = "Sunset over the Shimla hills seen through the pines at Pine Wood Nirvana";
+
+/** Landscape valley view on wide screens, the red-roof cottage at sunset on phones. */
+function HeroPicture() {
+  const common = { alt: heroAlt, fill: true, priority: true, sizes: "100vw" } as const;
+  const { props: { srcSet: desktop } } = getImageProps({ ...common, src: "/images/hero-valley.webp" });
+  const { props: { srcSet: mobile, ...rest } } = getImageProps({ ...common, src: "/images/hero-cottage.webp" });
+  return (
+    <picture>
+      <source media="(min-width: 768px)" srcSet={desktop} />
+      <source srcSet={mobile} />
+      {/* Blurred previews paint instantly while the full photo downloads. */}
+      <img
+        {...rest}
+        alt={heroAlt}
+        className="animate-kenburns bg-[image:var(--blur-m)] bg-cover object-cover md:bg-[image:var(--blur-d)]"
+        style={
+          {
+            ...rest.style,
+            "--blur-m": `url(${previews["/images/hero-cottage.webp"]})`,
+            "--blur-d": `url(${previews["/images/hero-valley.webp"]})`,
+          } as React.CSSProperties
+        }
+      />
+    </picture>
+  );
+}
+
 export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden bg-forest text-white">
-      <Image
-        src="/images/hero-valley.webp"
-        alt="Sunset over the Shimla hills seen through the pines at Pine Wood Nirvana"
-        fill
-        priority
-        sizes="100vw"
-        className="animate-kenburns object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/40 to-black/20" />
+      <HeroPicture />
+      <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/50 to-black/35 md:via-forest/40 md:to-black/20" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pb-14 pt-32 md:px-8 md:pb-20">
         <p className="animate-fade-up mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium tracking-wide ring-1 ring-white/20 backdrop-blur">

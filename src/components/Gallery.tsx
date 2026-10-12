@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Img from "@/components/Img";
 import { gallery, type GalleryItem } from "@/lib/site";
 import { ChevronIcon, CloseIcon } from "./icons";
 
@@ -10,6 +10,7 @@ const tabs = ["All", "Resort", "Rooms", "Evenings"] as const;
 export default function Gallery() {
   const [tab, setTab] = useState<(typeof tabs)[number]>("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const touchX = useRef<number | null>(null);
   const items: GalleryItem[] = tab === "All" ? gallery : gallery.filter((g) => g.tag === tab);
 
   const step = useCallback(
@@ -33,7 +34,7 @@ export default function Gallery() {
   }, [lightbox, step]);
 
   return (
-    <section id="gallery" className="px-4 py-20 md:px-8 md:py-28">
+    <section id="gallery" className="px-4 py-16 md:px-8 md:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6" data-reveal>
           <div>
@@ -62,7 +63,7 @@ export default function Gallery() {
               onClick={() => setLightbox(i)}
               className="group relative mb-3 block w-full overflow-hidden rounded-2xl md:mb-4"
             >
-              <Image
+              <Img
                 src={g.src}
                 alt={g.alt}
                 width={700}
@@ -83,29 +84,39 @@ export default function Gallery() {
           onClick={() => setLightbox(null)}
           role="dialog"
           aria-label="Photo viewer"
+          data-lenis-prevent
+          // Swipe left/right to move between photos on phones.
+          onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+          onTouchEnd={(e) => {
+            if (touchX.current === null) return;
+            const dx = e.changedTouches[0].clientX - touchX.current;
+            touchX.current = null;
+            if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+          }}
         >
           <button className="absolute right-4 top-4 rounded-full bg-white/10 p-2.5 text-white" aria-label="Close">
             <CloseIcon className="size-6" />
           </button>
           <button
             onClick={(e) => (e.stopPropagation(), step(-1))}
-            className="absolute left-3 z-10 rotate-180 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+            className="absolute left-3 z-10 hidden rotate-180 rounded-full md:block bg-white/10 p-3 text-white hover:bg-white/20"
             aria-label="Previous"
           >
             <ChevronIcon />
           </button>
-          <div className="relative h-[80vh] w-full max-w-6xl" onClick={(e) => e.stopPropagation()}>
-            <Image src={items[lightbox].src} alt={items[lightbox].alt} fill sizes="100vw" className="object-contain" />
+          <div className="relative h-[75vh] w-full max-w-6xl md:h-[80vh]" onClick={(e) => e.stopPropagation()}>
+            <Img src={items[lightbox].src} alt={items[lightbox].alt} fill sizes="100vw" className="object-contain" />
           </div>
           <button
             onClick={(e) => (e.stopPropagation(), step(1))}
-            className="absolute right-3 z-10 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+            className="absolute right-3 z-10 hidden rounded-full md:block bg-white/10 p-3 text-white hover:bg-white/20"
             aria-label="Next"
           >
             <ChevronIcon />
           </button>
           <p className="absolute inset-x-0 bottom-5 text-center text-sm text-white/70">
             {items[lightbox].alt} · {lightbox + 1}/{items.length}
+            <span className="block text-xs text-white/40 md:hidden">Swipe for more</span>
           </p>
         </div>
       )}

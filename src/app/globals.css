@@ -34,8 +34,16 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
   scroll-padding-top: 5rem;
 }
+
+/* Lenis smooth scrolling (its stock CSS also disables iframes, which would break the map and video). */
+html.lenis,
+html.lenis body { height: auto; }
+html.lenis { scroll-behavior: auto; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
 
 body {
   background: var(--color-cream);
@@ -63,3 +71,12 @@ body {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* FAQ accordions glide open where the browser supports animating to auto height. */
+:root { interpolate-size: allow-keywords; }
+.faq::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 0.35s ease, content-visibility 0.35s allow-discrete;
+}
+.faq[open]::details-content { block-size: auto; }
