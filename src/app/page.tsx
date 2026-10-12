@@ -14,6 +14,7 @@ import Location from "@/components/Location";
 import MobileBar from "@/components/MobileBar";
 import Nearby from "@/components/Nearby";
 import Reveal from "@/components/Reveal";
+import Reviews from "@/components/Reviews";
 import SmoothScroll from "@/components/SmoothScroll";
 import Stays from "@/components/Stays";
 import WaysToStay from "@/components/WaysToStay";
@@ -32,6 +33,7 @@ export default function Home() {
         <WaysToStay />
         <Film />
         <Gallery />
+        <Reviews />
         <Nearby />
         <Location />
         <About />

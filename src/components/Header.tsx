@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { site, telHref } from "@/lib/site";
+import { site, socials, telHref } from "@/lib/site";
 import { openConcierge } from "./Concierge";
-import { CloseIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./icons";
+import { CloseIcon, InstagramIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./icons";
 
 const links = [
   { href: "#stays", label: "Stays" },
@@ -12,6 +12,7 @@ const links = [
   { href: "#experiences", label: "Experiences" },
   { href: "#plan", label: "Plan a trip" },
   { href: "#gallery", label: "Gallery" },
+  { href: "#reviews", label: "Reviews" },
   { href: "#nearby", label: "Nearby" },
   { href: "#location", label: "Location" },
   { href: "#faq", label: "FAQ" },
@@ -129,6 +130,14 @@ export default function Header() {
           >
             <WhatsAppIcon /> WhatsApp
           </button>
+          <a
+            href={socials.instagram.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="col-span-2 flex items-center justify-center gap-2 py-1 text-sm font-semibold text-forest"
+          >
+            <InstagramIcon className="size-4" /> Follow us on Instagram
+          </a>
           <p className="col-span-2 text-center text-xs text-ink/50">{site.address}</p>
         </div>
       </div>

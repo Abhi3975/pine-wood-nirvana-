@@ -1,9 +1,9 @@
 "use client";
 
 import Img from "@/components/Img";
-import { site, telHref, waHref } from "@/lib/site";
+import { site, socials, telHref, waHref } from "@/lib/site";
 import { openConcierge } from "./Concierge";
-import { MailIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "./icons";
+import { FacebookIcon, InstagramIcon, MailIcon, PhoneIcon, PinIcon, WhatsAppIcon, YouTubeIcon } from "./icons";
 
 export default function Footer() {
   return (
@@ -66,6 +66,24 @@ export default function Footer() {
           <a href={site.parentSite} target="_blank" rel="noopener noreferrer" className="block text-white/85 hover:text-sunset">
             More GhumoG stays → ghumog.in
           </a>
+          <div className="flex gap-2 pt-2">
+            {[
+              { ...socials.instagram, label: "Instagram", Icon: InstagramIcon },
+              { ...socials.youtube, label: "YouTube", Icon: YouTubeIcon },
+              { ...socials.facebook, label: "Facebook", Icon: FacebookIcon },
+            ].map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="grid size-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-sunset"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
       <p className="border-t border-white/10 px-4 py-5 pb-24 text-center text-xs text-white/40 md:pb-5">

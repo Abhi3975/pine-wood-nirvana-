@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Img from "@/components/Img";
-import { gallery, type GalleryItem } from "@/lib/site";
-import { ChevronIcon, CloseIcon } from "./icons";
+import { gallery, socials, type GalleryItem } from "@/lib/site";
+import { ChevronIcon, CloseIcon, InstagramIcon } from "./icons";
 
 const tabs = ["All", "Resort", "Rooms", "Evenings"] as const;
 
@@ -40,6 +40,14 @@ export default function Gallery() {
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Gallery</p>
             <h2 className="font-display text-4xl font-light text-forest md:text-6xl">A look around.</h2>
+            <a
+              href={socials.instagram.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+            >
+              <InstagramIcon className="size-4" /> Follow {socials.instagram.handle}
+            </a>
           </div>
           <div className="flex gap-1 rounded-full bg-sand p-1">
             {tabs.map((t) => (

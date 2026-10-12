@@ -16,6 +16,13 @@ export const site = {
   parentSite: "https://www.ghumog.in",
 } as const;
 
+// As linked from ghumog.com.
+export const socials = {
+  instagram: { handle: "@aviral9913", href: "https://www.instagram.com/aviral9913" },
+  youtube: { handle: "@ghumog", href: "https://www.youtube.com/@ghumog" },
+  facebook: { handle: "ghumogbharke", href: "https://www.facebook.com/ghumogbharke" },
+} as const;
+
 export const telHref = (phone: string = site.phones[0]) =>
   `tel:${phone.replace(/\s/g, "")}`;
 
@@ -254,5 +261,39 @@ export const faqs = [
   {
     q: "What are the check-in and check-out times?",
     a: "Our team confirms timings with your booking, and we try to accommodate early arrivals and late departures when we can.",
+  },
+];
+
+// Real guest reviews from Tripadvisor (excerpts — full text at the link).
+export const reviewSources = {
+  tripadvisor: {
+    rating: "5.0",
+    count: 3,
+    href: "https://www.tripadvisor.in/Hotel_Review-g26234378-d26226888-Reviews-Pinewood_Nirvana_Shoghi_Shimla_A_Inde_Hotel-Kot_Kandaghat_Tehsil_Solan_District_Him.html",
+  },
+  google: "https://www.google.com/maps/search/?api=1&query=Pinewood+Nirvana+Shoghi+Shimla",
+};
+
+export const reviews = [
+  {
+    name: "Nitinn S Mittal",
+    from: "New Delhi",
+    trip: "Family trip · Apr 2024",
+    title: "Peaceful family stay in the hills",
+    text: "The resort offers a peaceful and serene environment, perfect for a getaway. The staff is friendly, welcoming, and always ready to assist.",
+  },
+  {
+    name: "Sonia Dravid",
+    from: "",
+    trip: "Office trip · Jul 2023",
+    title: "It's a great option for office trips!",
+    text: "It was a fantastic experience. All of us had great fun in peaceful jungles and the cottages were super comfortable.",
+  },
+  {
+    name: "Ashish Kumar",
+    from: "",
+    trip: "Family trip · Jul 2023",
+    title: "Our family had an amazing vacation!",
+    text: "The family-friendly atmosphere and amenities made it the perfect choice for us. The hotel staff was exceptionally friendly and attentive.",
   },
 ];
