@@ -421,3 +421,21 @@ export const resortReels = [
   { id: "z98SnKhL3XI", title: "A minute at Pine Wood Nirvana", caption: "Resort reel · @ghumog" },
   { id: "oYVyzkuprbg", title: "The full resort tour", caption: "Pet-friendly jungle resort · @ghumog" },
 ];
+
+// Video gallery — all real videos from youtube.com/@ghumog (GhumoG's own channel).
+export type GalleryVideo = { id: string; title: string; tag: "The resort" | "Around Shimla" | "Snow season" };
+export const galleryVideos: GalleryVideo[] = [
+  { id: "oYVyzkuprbg", title: "Pine Wood Nirvana — full resort tour", tag: "The resort" },
+  { id: "z98SnKhL3XI", title: "Pine Wood Nirvana in a minute", tag: "The resort" },
+  { id: "Xvt-jZ6q-V0", title: "Khushala Hanuman Temple, Shoghi", tag: "Around Shimla" },
+  { id: "i03UH6T5GTw", title: "A village trek in the Shimla hills", tag: "Around Shimla" },
+  { id: "3RUQ8y1CdxI", title: "Sankat Mochan Temple, Shimla", tag: "Around Shimla" },
+  { id: "KneX_Mj-d04", title: "Shimla day tour: Kufri, Fagu, Narkanda", tag: "Around Shimla" },
+  { id: "FsWjQf8YQ8o", title: "Why Kasauli is special", tag: "Around Shimla" },
+  { id: "2MXosPw-SbA", title: "Stone Kumbh Shiv Temple, Chail", tag: "Around Shimla" },
+  { id: "jox7b9zjmjA", title: "Rashtrapati Niwas, Mashobra", tag: "Around Shimla" },
+  { id: "KBidLHQCvwk", title: "Snow in Shimla & Kufri", tag: "Snow season" },
+  { id: "grFlt6I3dxI", title: "Live snowfall in Shimla", tag: "Snow season" },
+  { id: "YXmmagdFjVE", title: "How much snow in Kufri?", tag: "Snow season" },
+  { id: "K4N9ixgboSo", title: "Himachal under a white blanket, 2026", tag: "Snow season" },
+];
