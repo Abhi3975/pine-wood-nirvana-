@@ -64,22 +64,19 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className="columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
           {items.map((g, i) => (
             <button
               key={g.src}
               onClick={() => setLightbox(i)}
-              className="group relative mb-3 block w-full overflow-hidden rounded-2xl md:mb-4"
+              className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl"
             >
               <Img
                 src={g.src}
                 alt={g.alt}
-                width={700}
-                height={i % 3 === 0 ? 900 : 560}
+                fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-                className={`w-full object-cover transition duration-700 group-hover:scale-105 ${
-                  i % 3 === 0 ? "aspect-[4/5]" : "aspect-[5/4]"
-                }`}
+                className="object-cover transition duration-700 group-hover:scale-105"
               />
             </button>
           ))}

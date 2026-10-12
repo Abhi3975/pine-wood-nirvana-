@@ -73,7 +73,7 @@ function Welcome() {
           <p className="mt-6 font-display text-xl text-bark italic">— Warmly, the GhumoG Stay family</p>
         </div>
         <div className="grid grid-cols-2 gap-4" data-reveal>
-          <div className="relative mt-12 aspect-[3/4] overflow-hidden rounded-3xl">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
             <Img src="/images/path-cottage.webp" alt="Lantern-lit stone walkway to a cottage" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
           </div>
           <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
