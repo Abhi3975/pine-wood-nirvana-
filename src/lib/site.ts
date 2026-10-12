@@ -260,8 +260,8 @@ export const faqs = [
     a: "Village Paughat, Shoghi, on the Kalka–Shimla highway. Take the U-turn near the Shoghi Police Check Post and follow the slip road down about 2.5 km. We'll happily send you the live location on WhatsApp.",
   },
   {
-    q: "Can I bring my pet?",
-    a: "Yes — Pine Wood Nirvana is pet friendly. Just let us know when you book so we can give you the right cottage.",
+    q: "What is your pet policy?",
+    a: "Pets are welcome — Pine Wood Nirvana is a pet-friendly resort. Please tell us when you book (type, size and how many) so we can give you the right cottage. Keep pets on a leash in shared areas and away from the pool and restaurant, and clean up after them in the gardens. Owners are responsible for any damage, and any pet charge is confirmed with your booking on WhatsApp.",
   },
   {
     q: "Is food available at the resort?",
