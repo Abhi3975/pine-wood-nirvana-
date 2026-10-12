@@ -11,8 +11,8 @@ export default function MealPlans() {
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Meal plans</p>
         <div className="grid gap-5 md:grid-cols-2 md:items-end">
-          <h2 className="font-display text-4xl font-light text-forest md:text-6xl">Eat well in the forest.</h2>
-          <p className="text-lg text-ink/70 md:pb-2">
+          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Eat well in the forest.</h2>
+          <p className="text-base md:text-lg text-ink/70 md:pb-2">
             Our in-house restaurant cooks fresh, home-style meals. Pick the plan that suits your trip — you can add it
             to any cottage.
           </p>

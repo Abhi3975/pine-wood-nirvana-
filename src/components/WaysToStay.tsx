@@ -7,8 +7,8 @@ export default function WaysToStay() {
     <section id="plan" className="py-16 md:py-28">
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Plan your trip</p>
-        <h2 className="max-w-2xl font-display text-4xl font-light text-forest md:text-6xl">Who&apos;s coming along?</h2>
-        <p className="mt-4 max-w-xl text-lg text-ink/70">
+        <h2 className="max-w-2xl font-display text-3xl font-light text-forest md:text-5xl">Who&apos;s coming along?</h2>
+        <p className="mt-4 max-w-xl text-base md:text-lg text-ink/70">
           Tell us who you&apos;re travelling with and we&apos;ll suggest the right cottages and set things up before
           you arrive.
         </p>

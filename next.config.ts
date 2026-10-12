@@ -5,8 +5,11 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   images: {
-    // YouTube thumbnails for the guest-stories videos.
-    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
+    // YouTube thumbnails and ghumog.in blog covers.
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ytimg.com" },
+      { protocol: "https", hostname: "ghumog.in" }, // blog cover images
+    ],
   },
   turbopack: {
     root: __dirname,

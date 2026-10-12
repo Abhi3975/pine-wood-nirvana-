@@ -46,13 +46,13 @@ export default function Hero() {
           <PinIcon className="size-3.5" /> Village Paughat · Shoghi · Shimla
         </p>
         <h1
-          className="animate-fade-up max-w-4xl font-display text-5xl leading-[0.95] font-light tracking-tight sm:text-7xl md:text-8xl"
+          className="animate-fade-up max-w-4xl font-display text-[2.6rem] leading-[0.95] font-light tracking-tight sm:text-6xl md:text-7xl"
           style={{ animationDelay: "120ms" }}
         >
           Wake up <em className="font-normal text-sunset">in the pines.</em>
         </h1>
         <p
-          className="animate-fade-up mt-6 max-w-xl text-lg text-white/85 md:text-xl"
+          className="animate-fade-up mt-6 max-w-xl text-base md:text-lg text-white/85 md:text-xl"
           style={{ animationDelay: "240ms" }}
         >
           Luxury cottages, a forest-edge pool and bonfire nights — tucked 2.5 km off the Shoghi highway, away from the

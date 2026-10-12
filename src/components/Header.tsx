@@ -55,7 +55,7 @@ export default function Header() {
           <a href="#top" onClick={() => setMenu(false)} className="flex items-center gap-3" aria-label="Pine Wood Nirvana — home">
             <Image src="/images/logo.webp" alt="GhumoG Bharke" width={84} height={52} priority className="h-10 w-auto md:h-11" />
             <span className={`hidden leading-tight sm:block ${dark ? "text-forest" : "text-white"}`}>
-              <span className="block font-display text-lg">Pine Wood Nirvana</span>
+              <span className="block font-display text-base md:text-lg">Pine Wood Nirvana</span>
               <span className={`block text-[11px] uppercase tracking-[0.2em] ${dark ? "text-ink/50" : "text-white/70"}`}>
                 Jungle Resort · Shimla
               </span>
@@ -112,7 +112,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setMenu(false)}
-              className={`block border-b border-forest/10 py-4 font-display text-3xl text-forest transition-all duration-500 ${
+              className={`block border-b border-forest/10 py-3.5 font-display text-2xl text-forest transition-all duration-500 ${
                 menu ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
               }`}
               style={{ transitionDelay: menu ? `${60 + i * 35}ms` : "0ms" }}

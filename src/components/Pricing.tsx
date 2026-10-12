@@ -10,8 +10,8 @@ export default function Pricing() {
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Pricing</p>
         <div className="grid gap-5 md:grid-cols-2 md:items-end">
-          <h2 className="font-display text-4xl font-light text-forest md:text-6xl">Simple, honest rates.</h2>
-          <p className="text-lg text-ink/70 md:pb-2">
+          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Simple, honest rates.</h2>
+          <p className="text-base md:text-lg text-ink/70 md:pb-2">
             Book direct on WhatsApp for our best price — no booking fees, no middlemen. Rates start from:
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Pricing() {
 
             <div className="mt-6 flex items-end gap-1.5">
               <span className={`text-sm ${p.featured ? "text-white/60" : "text-ink/55"}`}>from</span>
-              <span className="font-display text-5xl leading-none">{inr(p.from)}</span>
+              <span className="font-display text-3xl leading-none">{inr(p.from)}</span>
             </div>
             <p className={`mt-1.5 text-sm ${p.featured ? "text-white/60" : "text-ink/55"}`}>
               per night · + {inr(p.taxes)} taxes

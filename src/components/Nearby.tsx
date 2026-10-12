@@ -8,9 +8,9 @@ export default function Nearby() {
         <div className="mb-10 grid gap-5 md:mb-14 md:grid-cols-2 md:items-end" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Explore nearby</p>
-            <h2 className="font-display text-4xl font-light text-forest md:text-6xl">Shimla on your doorstep.</h2>
+            <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Shimla on your doorstep.</h2>
           </div>
-          <p className="text-lg text-ink/70 md:pb-2">
+          <p className="text-base md:text-lg text-ink/70 md:pb-2">
             Stay in the quiet of the forest and still reach Shimla&apos;s favourite spots for a day out. Ask us and
             we&apos;ll arrange a cab.
           </p>

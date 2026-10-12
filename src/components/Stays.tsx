@@ -12,8 +12,8 @@ export default function Stays() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-2xl md:mb-14" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Stays</p>
-          <h2 className="font-display text-4xl font-light text-forest md:text-6xl">Three ways to stay in the forest.</h2>
-          <p className="mt-5 text-lg text-ink/70">
+          <h2 className="font-display text-3xl font-light text-forest md:text-5xl">Three ways to stay in the forest.</h2>
+          <p className="mt-5 text-base md:text-lg text-ink/70">
             Every cottage sits among tall pines with its own path, its own view and nothing but birdsong for company.
             Pick one — we&apos;ll confirm availability on WhatsApp.
           </p>
@@ -115,8 +115,8 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-pine/10 px-3 py-1 text-xs font-semibold text-pine">
           <UsersIcon className="size-4" /> {stay.guests}
         </p>
-        <h3 className="font-display text-3xl text-forest md:text-5xl">{stay.name}</h3>
-        <p className="mt-4 text-lg leading-relaxed text-ink/70">{stay.blurb}</p>
+        <h3 className="font-display text-3xl text-forest md:text-4xl">{stay.name}</h3>
+        <p className="mt-4 text-base md:text-lg leading-relaxed text-ink/70">{stay.blurb}</p>
         <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5">
           {stay.highlights.map((h) => (
             <li key={h} className="flex items-center gap-2 text-sm text-ink/80">

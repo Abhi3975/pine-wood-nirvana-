@@ -21,9 +21,9 @@ export default function VideoStories() {
       <div className="mx-auto mb-10 grid max-w-7xl gap-5 px-4 md:mb-14 md:grid-cols-2 md:items-end md:px-8" data-reveal>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Guest stories</p>
-          <h2 className="font-display text-4xl font-light md:text-6xl">See it, hear it, feel it.</h2>
+          <h2 className="font-display text-3xl font-light md:text-5xl">See it, hear it, feel it.</h2>
         </div>
-        <p className="text-lg text-white/70 md:pb-2">
+        <p className="text-base md:text-lg text-white/70 md:pb-2">
           {videoTestimonials.length
             ? "Short videos from Pine Wood Nirvana — and from the guests who've stayed with us. Tap to play."
             : "Short videos from Pine Wood Nirvana — tap to play. Stayed with us? Your story could be next."}
@@ -64,7 +64,7 @@ export default function VideoStories() {
                     </span>
                   )}
                   <span className="absolute inset-x-0 bottom-0 p-5">
-                    {c.quote && <span className="mb-2 block font-display text-lg leading-snug">&ldquo;{c.quote}&rdquo;</span>}
+                    {c.quote && <span className="mb-2 block font-display text-base md:text-lg leading-snug">&ldquo;{c.quote}&rdquo;</span>}
                     <span className="block font-semibold">{c.heading}</span>
                     <span className="block text-sm text-white/65">{c.sub}</span>
                   </span>

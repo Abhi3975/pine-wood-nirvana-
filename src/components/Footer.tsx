@@ -12,8 +12,8 @@ export default function Footer() {
       <div className="relative overflow-hidden">
         <Img src="/images/evening-cottages.webp" alt="" fill sizes="100vw" className="object-cover opacity-35" />
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center md:py-32" data-reveal>
-          <h2 className="font-display text-4xl font-light md:text-6xl">The pines are waiting.</h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-white/80">
+          <h2 className="font-display text-3xl font-light md:text-5xl">The pines are waiting.</h2>
+          <p className="mx-auto mt-5 max-w-xl text-base md:text-lg text-white/80">
             Message us your dates and we&apos;ll confirm your cottage in minutes — no booking fees, no middlemen.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">

@@ -13,7 +13,7 @@ export default function Founder() {
             <Img src={founder.photo} alt={`${founder.name}, founder of GhumoG Stay`} fill sizes="288px" className="object-cover" />
           </div>
           <div className="absolute -bottom-5 left-1/2 w-max -translate-x-1/2 rounded-full bg-forest px-5 py-2.5 text-center text-white shadow-xl">
-            <p className="font-display text-lg leading-tight">{founder.name}</p>
+            <p className="font-display text-base md:text-lg leading-tight">{founder.name}</p>
             <p className="text-[11px] uppercase tracking-[0.18em] text-white/60">Founder</p>
           </div>
         </div>
@@ -21,7 +21,7 @@ export default function Founder() {
         {/* Story */}
         <div className="pt-4 md:pt-0" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Meet the founder</p>
-          <h2 className="font-display text-4xl font-light text-forest md:text-5xl">{founder.name}</h2>
+          <h2 className="font-display text-3xl font-light text-forest md:text-4xl">{founder.name}</h2>
           <p className="mt-2 text-sm font-medium text-ink/55">{founder.roles.join(" · ")}</p>
 
           <ul className="mt-5 flex flex-wrap gap-2">
@@ -33,7 +33,7 @@ export default function Founder() {
           </ul>
 
           {founder.bio.map((p) => (
-            <p key={p.slice(0, 20)} className="mt-5 text-lg leading-relaxed text-ink/70">
+            <p key={p.slice(0, 20)} className="mt-5 text-base md:text-lg leading-relaxed text-ink/70">
               {p}
             </p>
           ))}

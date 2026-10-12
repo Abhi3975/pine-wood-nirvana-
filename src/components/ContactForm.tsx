@@ -77,8 +77,8 @@ export default function ContactForm() {
         {/* Left: invitation + direct lines */}
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Contact us</p>
-          <h2 className="font-display text-4xl font-light text-forest md:text-5xl">Send us a message.</h2>
-          <p className="mt-4 text-lg text-ink/70">
+          <h2 className="font-display text-3xl font-light text-forest md:text-4xl">Send us a message.</h2>
+          <p className="mt-4 text-base md:text-lg text-ink/70">
             Tell us a little about your trip and our team will get back to you with availability, rates and anything
             else you need.
           </p>

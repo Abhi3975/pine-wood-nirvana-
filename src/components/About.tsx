@@ -23,8 +23,8 @@ export default function About() {
 
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">About {site.brand}</p>
-          <h2 className="font-display text-4xl font-light md:text-5xl">Hosted by people who love the hills.</h2>
-          <p className="mt-5 text-lg text-white/75">
+          <h2 className="font-display text-3xl font-light md:text-4xl">Hosted by people who love the hills.</h2>
+          <p className="mt-5 text-base md:text-lg text-white/75">
             Pine Wood Nirvana is part of <b className="text-white">GhumoG Stay</b> by GhumoG Tour Planners — founded by{" "}
             {ghumog.founder}, with {ghumog.years} in travel and hospitality. <i>Har Safar Kuch Khass…</i> isn&apos;t
             just our tagline; it&apos;s how we look after every guest.

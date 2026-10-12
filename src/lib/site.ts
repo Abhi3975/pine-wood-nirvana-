@@ -439,3 +439,47 @@ export const galleryVideos: GalleryVideo[] = [
   { id: "YXmmagdFjVE", title: "How much snow in Kufri?", tag: "Snow season" },
   { id: "K4N9ixgboSo", title: "Himachal under a white blanket, 2026", tag: "Snow season" },
 ];
+
+// Real posts from the GhumoG blog (ghumog.in/blogs) — cards link out to the full article.
+export const blogPosts = [
+  {
+    title: "Pine Wood Nirvana by GhumoG",
+    excerpt: "Peaceful mountain living among pine forests, valley views and warm Himalayan hospitality.",
+    img: "https://ghumog.in/wp-content/uploads/2026/08/Pine-wood-resort-rom3.jpeg",
+    href: "https://ghumog.in/nirvana-pine-wood-resorts/",
+    tag: "Our resort",
+    lang: "English",
+  },
+  {
+    title: "Shimla Manali tour: the best of Himachal",
+    excerpt: "Mountains, valleys, temples and local experiences — plan a Shimla–Manali trip with GhumoG.",
+    img: "https://ghumog.in/wp-content/uploads/2026/09/Shimla-tour-with-ghumog.jpg",
+    href: "https://ghumog.in/shimla-manali-tour-himachal-pradesh/",
+    tag: "Trip planning",
+    lang: "English",
+  },
+  {
+    title: "Khushala Hanuman Mandir, Shoghi",
+    excerpt: "The story of the ancient Mahavir temple just below Shoghi — a short drive from the resort.",
+    img: "https://ghumog.in/wp-content/uploads/2023/11/more-of-spiti.jpg",
+    href: "https://ghumog.in/%e0%a4%aa%e0%a5%8d%e0%a4%b0%e0%a4%be%e0%a4%9a%e0%a5%80%e0%a4%a8-%e0%a4%ae%e0%a4%b9%e0%a4%be%e0%a4%b5%e0%a5%80%e0%a4%b0-%e0%a4%ae%e0%a4%82%e0%a4%a6%e0%a4%bf%e0%a4%b0-%e0%a4%96%e0%a5%81%e0%a4%b6/",
+    tag: "Nearby",
+    lang: "Hindi",
+  },
+  {
+    title: "Vaishno Devi cave temple, Shimla",
+    excerpt: "The cave shrine opposite Sankat Mochan on the highway into Shimla, and its history.",
+    img: "https://ghumog.in/wp-content/uploads/2023/10/Screenshot_20231014_150929_Gallery-1030x464-1.jpg",
+    href: "https://ghumog.in/%e0%a4%b6%e0%a4%bf%e0%a4%ae%e0%a4%b2%e0%a4%be-%e0%a4%ae%e0%a5%87%e0%a4%82-%e0%a4%b5%e0%a5%88%e0%a4%b7%e0%a5%8d%e0%a4%a3%e0%a5%8b-%e0%a4%a6%e0%a5%87%e0%a4%b5%e0%a5%80-%e0%a4%97%e0%a5%81%e0%a4%ab/",
+    tag: "Nearby",
+    lang: "Hindi",
+  },
+  {
+    title: "Famous lakes of Himachal Pradesh",
+    excerpt: "The state's most beautiful lakes, and how to add them to your mountain trip.",
+    img: "https://ghumog.in/wp-content/uploads/2023/11/alpine-homes.jpg",
+    href: "https://ghumog.in/%e0%a4%b9%e0%a4%bf%e0%a4%ae%e0%a4%be%e0%a4%9a%e0%a4%b2-%e0%a4%aa%e0%a5%8d%e0%a4%b0%e0%a4%a6%e0%a5%87%e0%a4%b6-%e0%a4%95%e0%a5%80-%e0%a4%aa%e0%a5%8d%e0%a4%b0%e0%a4%b8%e0%a4%bf%e0%a4%a6%e0%a5%8d/",
+    tag: "Explore Himachal",
+    lang: "Hindi",
+  },
+];

@@ -26,7 +26,7 @@ export default function VideoGallery() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6 md:mb-10" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Video gallery</p>
-            <h2 className="font-display text-4xl font-light md:text-6xl">Watch before you go.</h2>
+            <h2 className="font-display text-3xl font-light md:text-5xl">Watch before you go.</h2>
           </div>
           <div className="no-scrollbar flex max-w-full gap-1 overflow-x-auto rounded-full bg-white/10 p-1">
             {tabs.map((t) => (

@@ -30,7 +30,7 @@ export default function DayHere() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 max-w-2xl md:mb-16" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">A day here</p>
-          <h2 className="font-display text-4xl font-light md:text-6xl">From misty mornings to firelit nights.</h2>
+          <h2 className="font-display text-3xl font-light md:text-5xl">From misty mornings to firelit nights.</h2>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -50,7 +50,7 @@ export default function DayHere() {
                   }`}
                 />
               ))}
-              <span className="absolute left-5 top-5 rounded-full bg-black/40 px-4 py-1.5 font-display text-lg backdrop-blur">
+              <span className="absolute left-5 top-5 rounded-full bg-black/40 px-4 py-1.5 font-display text-base md:text-lg backdrop-blur">
                   {dayHere[active].time}
                 </span>
               </div>
@@ -74,7 +74,7 @@ export default function DayHere() {
                 />
                 <p className="font-display text-xl text-sunset">{d.time}</p>
                 <h3
-                  className={`mt-1 font-display text-3xl transition-opacity duration-500 md:text-4xl ${
+                  className={`mt-1 font-display text-3xl transition-opacity duration-500 md:text-3xl ${
                     i === active ? "opacity-100" : "lg:opacity-40"
                   }`}
                 >

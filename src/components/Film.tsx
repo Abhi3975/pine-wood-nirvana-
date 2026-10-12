@@ -37,7 +37,7 @@ export default function Film() {
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">The film</p>
-            <h2 className="max-w-xl font-display text-4xl font-light md:text-6xl">Take a walk through the forest.</h2>
+            <h2 className="max-w-xl font-display text-3xl font-light md:text-5xl">Take a walk through the forest.</h2>
           </div>
           <p className="max-w-sm text-white/70">
             Two minutes from the lantern-lit pathways to the pool deck — see the resort before you arrive.
