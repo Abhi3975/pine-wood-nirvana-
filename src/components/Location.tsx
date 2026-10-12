@@ -1,4 +1,4 @@
-import { mapsDirectionsHref, site, telHref, waHref } from "@/lib/site";
+import { mapsDirectionsHref, site, stayTimes, telHref, waHref } from "@/lib/site";
 import { ArrowIcon, PhoneIcon, PinIcon, WhatsAppIcon } from "./icons";
 
 const steps = [
@@ -58,14 +58,26 @@ export default function Location() {
           </div>
         </div>
 
-        <div className="min-h-[380px] overflow-hidden rounded-3xl bg-sand ring-1 ring-black/5" data-reveal>
-          <iframe
-            title="Map to Pine Wood Nirvana"
-            src={`https://www.google.com/maps?q=${encodeURIComponent(site.mapsQuery)}&z=13&output=embed`}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="size-full min-h-[380px] border-0"
-          />
+        <div className="self-center rounded-3xl bg-forest p-6 text-white md:p-10" data-reveal>
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Good to know</p>
+          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-7">
+            {[
+              ["Check-in", stayTimes.checkIn],
+              ["Check-out", stayTimes.checkOut],
+              ["From the highway", "2.5 km"],
+              ["Parking", "Free, on site"],
+              ["Pets", "Welcome 🐾"],
+              ["Nearest town", "Shoghi"],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <dt className="text-xs uppercase tracking-wider text-white/50">{k}</dt>
+                <dd className="mt-1 font-display text-2xl">{v}</dd>
+              </div>
+            ))}
+          </dl>
+          <a href="#map" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-sunset hover:underline">
+            See it on the map ↓
+          </a>
         </div>
       </div>
     </section>

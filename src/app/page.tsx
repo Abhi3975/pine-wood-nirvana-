@@ -13,6 +13,7 @@ import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
 import Img from "@/components/Img";
 import Location from "@/components/Location";
+import MapSection from "@/components/MapSection";
 import MealPlans from "@/components/MealPlans";
 import MobileBar from "@/components/MobileBar";
 import Nearby from "@/components/Nearby";
@@ -42,6 +43,7 @@ export default function Home() {
         <Reviews />
         <Nearby />
         <Location />
+        <MapSection />
         <About />
         <Founder />
         <FAQ />

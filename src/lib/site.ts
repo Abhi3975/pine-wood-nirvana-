@@ -11,7 +11,6 @@ export const site = {
   phones: ["+91 70189 39901", "+91 93199 99913", "+91 86799 99913"],
   email: "ghomogbharke@gmail.com",
   address: "Village Paughat, Shoghi, Shimla, Himachal Pradesh",
-  mapsQuery: "Pine Wood Nirvana Jungle Resort, Shoghi, Shimla",
   youtubeId: "oYVyzkuprbg",
   parentSite: "https://www.ghumog.in",
 } as const;
@@ -29,9 +28,18 @@ export const telHref = (phone: string = site.phones[0]) =>
 export const waHref = (text: string) =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 
-export const mapsDirectionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-  site.mapsQuery,
-)}`;
+// Where the map and "Directions" point. The resort's own Google listing currently has its pin
+// in Shimla city (31.1027, 77.1998), ~10 km from the resort, so we don't use the listing name.
+// Until the client shares their exact pin, we point at Shoghi and let the steps (and a live
+// WhatsApp location) cover the last 2.5 km. Set exact: true once lat/lng is the resort itself.
+export const mapPin = { lat: 31.039054, lng: 77.1246457, label: "Shoghi, Shimla", exact: false };
+
+export const mapsDirectionsHref = `https://www.google.com/maps/dir/?api=1&destination=${mapPin.lat},${mapPin.lng}`;
+export const mapsOpenHref = `https://www.google.com/maps/search/?api=1&query=${mapPin.lat},${mapPin.lng}`;
+export const mapsEmbedSrc = `https://www.google.com/maps?q=${mapPin.lat},${mapPin.lng}&z=${mapPin.exact ? 15 : 13}&hl=en&output=embed`;
+
+// From the resort's Google listing.
+export const stayTimes = { checkIn: "1:00 PM", checkOut: "11:00 AM" };
 
 export type Stay = {
   id: string;
@@ -273,7 +281,7 @@ export const faqs = [
   },
   {
     q: "What are the check-in and check-out times?",
-    a: "Our team confirms timings with your booking, and we try to accommodate early arrivals and late departures when we can.",
+    a: "Check-in is from 1:00 PM and check-out is by 11:00 AM. Arriving early or leaving late? Tell us when you book and we'll do our best to accommodate you.",
   },
 ];
 
