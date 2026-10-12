@@ -1,3 +1,4 @@
+import { getAvailability, nightsOf } from "@/lib/availability";
 import { quote, type BookingInput } from "@/lib/booking";
 
 // Creates a Razorpay order for the booking. Without RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET
@@ -26,6 +27,16 @@ export async function POST(req: Request) {
     payFull: Boolean(body.payFull),
   });
   if ("error" in q) return Response.json({ error: q.error }, { status: 400 });
+
+  // Don't take money for nights the resort has marked full.
+  const { blocked } = await getAvailability();
+  const full = nightsOf(String(body.checkIn), String(body.checkOut)).filter((n) => blocked[String(body.stayId)]?.includes(n));
+  if (full.length) {
+    return Response.json(
+      { error: `Sorry, ${q.stayName} is fully booked on ${full.map((n) => new Date(n + "T00:00:00Z").toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "UTC" })).join(", ")}. Please pick other dates or another cottage.` },
+      { status: 409 },
+    );
+  }
 
   const keyId = process.env.RAZORPAY_KEY_ID;
   const keySecret = process.env.RAZORPAY_KEY_SECRET;

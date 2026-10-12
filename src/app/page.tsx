@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import AvailabilityCalendar from "@/components/AvailabilityCalendar";
 import Blog from "@/components/Blog";
 import Booking from "@/components/Booking";
 import Concierge from "@/components/Concierge";
@@ -42,6 +43,7 @@ export default function Home() {
         <WaysToStay />
         <Pricing />
         <MealPlans />
+        <AvailabilityCalendar />
         <Booking />
         <Film />
         <Gallery />

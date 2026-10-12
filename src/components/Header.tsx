@@ -10,6 +10,7 @@ import { CloseIcon, InstagramIcon, MenuIcon, PhoneIcon, WhatsAppIcon } from "./i
 const links: { href: string; label: string; phoneOnly?: boolean }[] = [
   { href: "#stays", label: "Stays" },
   { href: "#pricing", label: "Pricing" },
+  { href: "#availability", label: "Availability", phoneOnly: true },
   { href: "#book", label: "Book online" },
   { href: "#day", label: "A day here", phoneOnly: true },
   { href: "#experiences", label: "Experiences", phoneOnly: true },

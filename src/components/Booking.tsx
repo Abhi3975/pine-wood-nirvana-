@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { PREFILL_EVENT, type Prefill } from "./AvailabilityCalendar";
 import { bookingRules, mealPlanName, quote, suggestRooms } from "@/lib/booking";
 import { inr, mealPlans, site, stays, waHref } from "@/lib/site";
 import { CheckIcon, WhatsAppIcon } from "./icons";
@@ -50,6 +51,19 @@ export default function Booking() {
   // "Today" is read in the browser when a date field is used, not during the static prerender.
   const [today, setToday] = useState("");
   const markToday = () => setToday(localIso(new Date()));
+
+  // Dates picked on the availability calendar land here.
+  useEffect(() => {
+    const onPrefill = (e: Event) => {
+      const { stayId: id, checkIn: a, checkOut: b } = (e as CustomEvent<Prefill>).detail;
+      setStayId(id);
+      setCheckIn(a);
+      setCheckOut(b);
+      setError("");
+    };
+    window.addEventListener(PREFILL_EVENT, onPrefill);
+    return () => window.removeEventListener(PREFILL_EVENT, onPrefill);
+  }, []);
 
   const minRooms = suggestRooms(stayId, adults + kids);
   const roomsUsed = Math.max(rooms, minRooms);
