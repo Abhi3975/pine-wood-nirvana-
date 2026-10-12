@@ -36,7 +36,8 @@ export default function DayHere() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Sticky photo stack — desktop only */}
           <div className="hidden lg:block">
-            <div className="sticky top-28 aspect-[4/5] overflow-hidden rounded-3xl">
+            <div className="sticky top-28">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               {dayHere.map((d, i) => (
                 <Img
                   key={d.img}
@@ -50,8 +51,9 @@ export default function DayHere() {
                 />
               ))}
               <span className="absolute left-5 top-5 rounded-full bg-black/40 px-4 py-1.5 font-display text-lg backdrop-blur">
-                {dayHere[active].time}
-              </span>
+                  {dayHere[active].time}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -80,7 +82,7 @@ export default function DayHere() {
                 </h3>
                 <p className="mt-3 max-w-md text-white/70">{d.text}</p>
                 <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-2xl lg:hidden">
-                  <Img src={d.img} alt={d.title} fill sizes="100vw" className="object-cover" />
+                  <Img src={d.img} alt={d.title} fill sizes="(min-width: 1024px) 1px, 90vw" className="object-cover" />
                 </div>
               </li>
             ))}
