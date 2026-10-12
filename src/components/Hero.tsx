@@ -1,0 +1,81 @@
+"use client";
+
+import Image from "next/image";
+import { openConcierge } from "./Concierge";
+import { openFilm } from "./Film";
+import { PinIcon, PlayIcon, StarIcon, WhatsAppIcon } from "./icons";
+
+export default function Hero() {
+  return (
+    <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden bg-forest text-white">
+      <Image
+        src="/images/hero-valley.webp"
+        alt="Sunset over the Shimla hills seen through the pines at Pine Wood Nirvana"
+        fill
+        priority
+        sizes="100vw"
+        className="animate-kenburns object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/40 to-black/20" />
+
+      <div className="relative mx-auto w-full max-w-7xl px-4 pb-14 pt-32 md:px-8 md:pb-20">
+        <p className="animate-fade-up mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium tracking-wide ring-1 ring-white/20 backdrop-blur">
+          <PinIcon className="size-3.5" /> Village Paughat · Shoghi · Shimla
+        </p>
+        <h1
+          className="animate-fade-up max-w-4xl font-display text-5xl leading-[0.95] font-light tracking-tight sm:text-7xl md:text-8xl"
+          style={{ animationDelay: "120ms" }}
+        >
+          Wake up <em className="font-normal text-sunset">in the pines.</em>
+        </h1>
+        <p
+          className="animate-fade-up mt-6 max-w-xl text-lg text-white/85 md:text-xl"
+          style={{ animationDelay: "240ms" }}
+        >
+          Luxury cottages, a forest-edge pool and bonfire nights — tucked 2.5 km off the Shoghi highway, away from the
+          noise of the city.
+        </p>
+
+        <div className="animate-fade-up mt-9 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
+          <button
+            onClick={() => openConcierge()}
+            className="flex items-center gap-2.5 rounded-full bg-sunset px-7 py-4 font-semibold shadow-xl shadow-sunset/30 transition hover:-translate-y-0.5 hover:bg-ember"
+          >
+            <WhatsAppIcon /> Check availability
+          </button>
+          <button
+            onClick={openFilm}
+            className="flex items-center gap-3 rounded-full bg-white/10 py-2 pl-2 pr-6 font-semibold ring-1 ring-white/30 backdrop-blur transition hover:bg-white/20"
+          >
+            <span className="grid size-10 place-items-center rounded-full bg-white text-forest">
+              <PlayIcon className="size-4 translate-x-px" />
+            </span>
+            Watch the film
+          </button>
+        </div>
+
+        <dl
+          className="animate-fade-up mt-14 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 border-t border-white/15 pt-7 sm:grid-cols-4"
+          style={{ animationDelay: "480ms" }}
+        >
+          {[
+            ["3", "cottage styles"],
+            ["Pool", "with valley views"],
+            ["Pet", "friendly stays"],
+          ].map(([k, v]) => (
+            <div key={v}>
+              <dt className="font-display text-3xl">{k}</dt>
+              <dd className="text-sm text-white/65">{v}</dd>
+            </div>
+          ))}
+          <div>
+            <dt className="flex items-center gap-1 font-display text-3xl">
+              4.8 <StarIcon className="size-5 text-sunset" />
+            </dt>
+            <dd className="text-sm text-white/65">GhumoG guest rating</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  );
+}
