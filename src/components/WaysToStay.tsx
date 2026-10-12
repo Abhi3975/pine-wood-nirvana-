@@ -7,8 +7,8 @@ export default function WaysToStay() {
     <section id="plan" className="py-16 md:py-28">
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Plan your trip</p>
-        <h2 className="max-w-2xl font-display text-[1.75rem] font-light text-forest md:text-4xl">Who&apos;s coming along?</h2>
-        <p className="mt-4 max-w-xl text-[15px] md:text-base text-ink/70">
+        <h2 className="max-w-2xl font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">Who&apos;s coming along?</h2>
+        <p className="mt-4 max-w-xl text-[15px] text-ink/70">
           Tell us who you&apos;re travelling with and we&apos;ll suggest the right cottages and set things up before
           you arrive.
         </p>
@@ -25,7 +25,7 @@ export default function WaysToStay() {
               <Img src={w.img} alt={w.title} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 82vw" className="object-cover" />
             </div>
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="font-display text-xl md:text-2xl text-forest">{w.title}</h3>
+              <h3 className="font-display text-lg md:text-xl text-forest">{w.title}</h3>
               <p className="mt-1 text-ink/65">{w.pitch}</p>
               <ul className="mt-4 space-y-2 text-sm">
                 {w.points.map((p) => (

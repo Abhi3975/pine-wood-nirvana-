@@ -145,7 +145,7 @@ export default function Booking() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mb-8 max-w-2xl md:mb-12" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Book online</p>
-          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Reserve your cottage.</h2>
+          <h2 className="font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">Reserve your cottage.</h2>
           <p className="mt-3 text-[15px] text-ink/70 md:text-base">
             Pick your dates, pay a {bookingRules.advancePercent}% advance securely by UPI, card or netbanking, and pay the
             rest at the resort.
@@ -272,7 +272,7 @@ export default function Booking() {
             <aside className="lg:sticky lg:top-24 lg:self-start" data-reveal>
               <div className="rounded-3xl bg-forest p-6 text-white md:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sunset">Your stay</p>
-                <h3 className="mt-2 font-display text-xl md:text-2xl">{stay.name}</h3>
+                <h3 className="mt-2 font-display text-lg md:text-xl">{stay.name}</h3>
                 {ok ? (
                   <>
                     <p className="mt-1 text-sm text-white/65">
@@ -339,7 +339,7 @@ export default function Booking() {
             <p className="inline-block rounded-full bg-sunset/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-ember">
               Demo mode — no money is charged
             </p>
-            <h3 className="mt-4 font-display text-xl md:text-2xl text-forest">Pay {inr(ok.payNow)}</h3>
+            <h3 className="mt-4 font-display text-lg md:text-xl text-forest">Pay {inr(ok.payNow)}</h3>
             <p className="mt-1 text-sm text-ink/60">
               {stay.name} · {ok.nights} night{ok.nights > 1 ? "s" : ""} · {ok.rooms} room{ok.rooms > 1 ? "s" : ""}
             </p>

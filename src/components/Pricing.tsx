@@ -10,8 +10,8 @@ export default function Pricing() {
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Pricing</p>
         <div className="grid gap-5 md:grid-cols-2 md:items-end">
-          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Simple, honest rates.</h2>
-          <p className="text-[15px] md:text-base text-ink/70 md:pb-2">
+          <h2 className="font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">Simple, honest rates.</h2>
+          <p className="text-[15px] text-ink/70 md:pb-2">
             Book direct on WhatsApp for our best price — no booking fees, no middlemen. Rates start from:
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function Pricing() {
                 Signature stay
               </span>
             )}
-            <h3 className={`font-display text-xl md:text-2xl ${p.featured ? "" : "text-forest"}`}>{p.name}</h3>
+            <h3 className={`font-display text-lg md:text-xl ${p.featured ? "" : "text-forest"}`}>{p.name}</h3>
             <p className={`text-sm ${p.featured ? "text-white/60" : "text-ink/55"}`}>{p.guests}</p>
 
             <div className="mt-6 flex items-end gap-1.5">
@@ -66,7 +66,7 @@ export default function Pricing() {
       </ul>
 
       <div className="mx-auto mt-12 max-w-7xl px-4 md:mt-16 md:px-8" data-reveal>
-        <h3 className="mb-5 font-display text-xl md:text-2xl text-forest">Make it yours</h3>
+        <h3 className="mb-5 font-display text-lg md:text-xl text-forest">Make it yours</h3>
         <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {pricing.extras.map((x) => (
             <li key={x.title} className="rounded-2xl bg-white p-4 ring-1 ring-forest/10 md:p-5">

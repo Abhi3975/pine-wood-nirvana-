@@ -11,8 +11,8 @@ export default function MealPlans() {
       <div className="mx-auto mb-10 max-w-7xl px-4 md:mb-14 md:px-8" data-reveal>
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Meal plans</p>
         <div className="grid gap-5 md:grid-cols-2 md:items-end">
-          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Eat well in the forest.</h2>
-          <p className="text-[15px] md:text-base text-ink/70 md:pb-2">
+          <h2 className="font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">Eat well in the forest.</h2>
+          <p className="text-[15px] text-ink/70 md:pb-2">
             Our in-house restaurant cooks fresh, home-style meals. Pick the plan that suits your trip — you can add it
             to any cottage.
           </p>
@@ -43,7 +43,7 @@ export default function MealPlans() {
             >
               {m.code}
             </span>
-            <h3 className={`mt-4 font-display text-xl md:text-2xl ${m.featured ? "" : "text-forest"}`}>{m.name}</h3>
+            <h3 className={`mt-4 font-display text-lg md:text-xl ${m.featured ? "" : "text-forest"}`}>{m.name}</h3>
             <p className={`mt-2 text-sm ${m.featured ? "text-white/70" : "text-ink/65"}`}>{m.text}</p>
 
             <ul className={`mt-5 flex-1 space-y-2 border-t pt-5 text-sm ${m.featured ? "border-white/15" : "border-forest/10"}`}>

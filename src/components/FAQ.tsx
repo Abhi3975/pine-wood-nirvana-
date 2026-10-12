@@ -7,7 +7,7 @@ export default function FAQ() {
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Good to know</p>
-          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-3xl">Questions, answered.</h2>
+          <h2 className="font-display text-[1.6rem] font-light text-forest md:text-3xl">Questions, answered.</h2>
           <p className="mt-4 text-ink/70">Something else on your mind? We&apos;re one message away.</p>
           <a
             href={waHref("Hi! I have a question about staying at Pine Wood Nirvana.")}

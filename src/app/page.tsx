@@ -77,7 +77,7 @@ function Welcome() {
           <h2 className="font-display text-[1.6rem] leading-tight font-light text-forest md:text-3xl">
             A private pine forest above Shimla, with cottages hidden among the trees.
           </h2>
-          <p className="mt-6 text-[15px] md:text-base leading-relaxed text-ink/70">
+          <p className="mt-6 text-[15px] leading-relaxed text-ink/70">
             Lantern-lit stone paths wind between red-roofed cottages and timber cabins. Mornings smell of pine; evenings
             end around the bonfire under fairy lights. Pine Wood Nirvana is where you come to slow down — fresh mountain
             air, the hum of the forest and a valley view from almost everywhere.

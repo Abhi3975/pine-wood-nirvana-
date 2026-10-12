@@ -21,9 +21,9 @@ export default function VideoStories() {
       <div className="mx-auto mb-10 grid max-w-7xl gap-5 px-4 md:mb-14 md:grid-cols-2 md:items-end md:px-8" data-reveal>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Guest stories</p>
-          <h2 className="font-display text-[1.75rem] font-light md:text-4xl">See it, hear it, feel it.</h2>
+          <h2 className="font-display text-[1.6rem] font-light md:text-[2.125rem]">See it, hear it, feel it.</h2>
         </div>
-        <p className="text-[15px] md:text-base text-white/70 md:pb-2">
+        <p className="text-[15px] text-white/70 md:pb-2">
           {videoTestimonials.length
             ? "Short videos from Pine Wood Nirvana — and from the guests who've stayed with us. Tap to play."
             : "Short videos from Pine Wood Nirvana — tap to play. Stayed with us? Your story could be next."}
@@ -35,7 +35,7 @@ export default function VideoStories() {
         data-reveal
       >
         {cards.map((c) => (
-          <li key={c.id} className="w-[72%] shrink-0 snap-start sm:w-[45%] md:w-[250px]">
+          <li key={c.id} className="w-[54%] shrink-0 snap-start sm:w-[36%] md:w-[200px]">
             <div className="relative aspect-[9/16] overflow-hidden rounded-3xl bg-black ring-1 ring-white/10">
               {playing === c.id ? (
                 <iframe
@@ -55,7 +55,7 @@ export default function VideoStories() {
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/20" />
-                  <span className="absolute left-1/2 top-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-forest shadow-2xl transition group-hover:scale-110">
+                  <span className="absolute left-1/2 top-1/2 grid size-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-forest shadow-2xl transition group-hover:scale-110">
                     <PlayIcon className="size-6 translate-x-0.5" />
                   </span>
                   {c.guest && (
@@ -64,7 +64,7 @@ export default function VideoStories() {
                     </span>
                   )}
                   <span className="absolute inset-x-0 bottom-0 p-5">
-                    {c.quote && <span className="mb-2 block font-display text-[15px] md:text-base leading-snug">&ldquo;{c.quote}&rdquo;</span>}
+                    {c.quote && <span className="mb-2 block font-display text-[15px] leading-snug">&ldquo;{c.quote}&rdquo;</span>}
                     <span className="block font-semibold">{c.heading}</span>
                     <span className="block text-sm text-white/65">{c.sub}</span>
                   </span>
@@ -75,12 +75,12 @@ export default function VideoStories() {
         ))}
 
         {/* Invite guests to add their own story */}
-        <li className="w-[72%] shrink-0 snap-start sm:w-[45%] md:w-[250px]">
-          <div className="flex aspect-[9/16] flex-col justify-between rounded-3xl border border-dashed border-white/25 bg-white/5 p-6">
-            <QuoteIcon className="size-10 text-sunset" />
+        <li className="w-[54%] shrink-0 snap-start sm:w-[36%] md:w-[200px]">
+          <div className="flex aspect-[9/16] flex-col justify-between rounded-3xl border border-dashed border-white/25 bg-white/5 p-4">
+            <QuoteIcon className="size-8 text-sunset" />
             <div>
-              <h3 className="font-display text-xl md:text-2xl leading-snug">Stayed with us? Share your story.</h3>
-              <p className="mt-3 text-sm text-white/65">
+              <h3 className="font-display text-lg leading-snug">Stayed with us? Share your story.</h3>
+              <p className="mt-2 text-xs leading-relaxed text-white/65">
                 Send us a short video from your stay — the pool, the bonfire, your favourite moment — and we&apos;ll
                 feature it here.
               </p>
@@ -88,7 +88,7 @@ export default function VideoStories() {
                 href={waHref("Hi! I stayed at Pine Wood Nirvana and I'd love to share a video of my stay.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold hover:bg-[#1ebe5a]"
+                className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-xs font-semibold hover:bg-[#1ebe5a]"
               >
                 <WhatsAppIcon className="size-4" /> Send your video
               </a>

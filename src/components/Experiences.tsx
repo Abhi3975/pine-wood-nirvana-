@@ -8,9 +8,9 @@ export default function Experiences() {
         <div className="mb-10 grid px-4 md:mb-14 md:px-8 gap-6 md:grid-cols-2 md:items-end" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Experiences</p>
-            <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Days by the pool, nights by the fire.</h2>
+            <h2 className="font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">Days by the pool, nights by the fire.</h2>
           </div>
-          <p className="text-[15px] md:text-base text-ink/70 md:pb-2">
+          <p className="text-[15px] text-ink/70 md:pb-2">
             Fresh mountain air, pine forests all around and everything you need for a slow weekend — without ever
             getting back in the car.
           </p>
@@ -32,7 +32,7 @@ export default function Experiences() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white">
-                <h3 className="font-display text-xl md:text-2xl">{x.title}</h3>
+                <h3 className="font-display text-lg md:text-xl">{x.title}</h3>
                 <p className="mt-1.5 text-sm text-white/80">{x.text}</p>
               </figcaption>
             </figure>

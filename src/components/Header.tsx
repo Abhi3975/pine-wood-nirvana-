@@ -58,7 +58,7 @@ export default function Header() {
           <a href="#top" onClick={() => setMenu(false)} className="flex items-center gap-3" aria-label="Pine Wood Nirvana — home">
             <Image src="/images/logo.webp" alt="GhumoG Bharke" width={84} height={52} priority className="h-10 w-auto md:h-11" />
             <span className={`hidden leading-tight sm:block ${dark ? "text-forest" : "text-white"}`}>
-              <span className="block font-display text-[15px] md:text-base">Pine Wood Nirvana</span>
+              <span className="block font-display text-[15px]">Pine Wood Nirvana</span>
               <span className={`block text-[11px] uppercase tracking-[0.2em] ${dark ? "text-ink/50" : "text-white/70"}`}>
                 Jungle Resort · Shimla
               </span>

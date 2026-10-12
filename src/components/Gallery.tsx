@@ -40,7 +40,7 @@ export default function Gallery() {
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6" data-reveal>
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Gallery</p>
-            <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">A look around.</h2>
+            <h2 className="font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">A look around.</h2>
             <a
               href={socials.instagram.href}
               target="_blank"

@@ -14,7 +14,7 @@ export default function Stays() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 max-w-2xl md:mb-14" data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Stays</p>
-          <h2 className="font-display text-[1.75rem] font-light text-forest md:text-4xl">Three ways to stay in the forest.</h2>
+          <h2 className="font-display text-[1.6rem] font-light text-forest md:text-[2.125rem]">Three ways to stay in the forest.</h2>
           <p className="mt-3 text-[15px] text-ink/70 md:mt-5 md:text-base">
             Every cottage sits among tall pines with its own path, its own view and nothing but birdsong for company.
             Pick one — we&apos;ll confirm availability on WhatsApp.
