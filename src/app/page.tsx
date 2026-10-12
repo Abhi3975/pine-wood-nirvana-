@@ -74,7 +74,7 @@ function Welcome() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Welcome</p>
-          <h2 className="font-display text-3xl leading-tight font-light text-forest md:text-3xl">
+          <h2 className="font-display text-[1.6rem] leading-tight font-light text-forest md:text-3xl">
             A private pine forest above Shimla, with cottages hidden among the trees.
           </h2>
           <p className="mt-6 text-[15px] md:text-base leading-relaxed text-ink/70">
@@ -82,7 +82,7 @@ function Welcome() {
             end around the bonfire under fairy lights. Pine Wood Nirvana is where you come to slow down — fresh mountain
             air, the hum of the forest and a valley view from almost everywhere.
           </p>
-          <p className="mt-6 font-display text-xl text-bark italic">— Warmly, the GhumoG Stay family</p>
+          <p className="mt-6 font-display text-lg text-bark italic">— Warmly, the GhumoG Stay family</p>
         </div>
         <div className="grid grid-cols-2 gap-4" data-reveal>
           <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">

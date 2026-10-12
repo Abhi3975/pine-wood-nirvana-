@@ -157,7 +157,7 @@ export default function Booking() {
             <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#25D366] text-white">
               <CheckIcon className="size-8" />
             </span>
-            <h3 className="mt-5 font-display text-2xl text-forest md:text-2xl">
+            <h3 className="mt-5 font-display text-xl text-forest md:text-2xl">
               {done.demo ? "Demo booking complete" : "Booking confirmed!"}
             </h3>
             <p className="mt-2 text-ink/70">
@@ -272,7 +272,7 @@ export default function Booking() {
             <aside className="lg:sticky lg:top-24 lg:self-start" data-reveal>
               <div className="rounded-3xl bg-forest p-6 text-white md:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sunset">Your stay</p>
-                <h3 className="mt-2 font-display text-2xl">{stay.name}</h3>
+                <h3 className="mt-2 font-display text-xl md:text-2xl">{stay.name}</h3>
                 {ok ? (
                   <>
                     <p className="mt-1 text-sm text-white/65">
@@ -339,7 +339,7 @@ export default function Booking() {
             <p className="inline-block rounded-full bg-sunset/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-ember">
               Demo mode — no money is charged
             </p>
-            <h3 className="mt-4 font-display text-2xl text-forest">Pay {inr(ok.payNow)}</h3>
+            <h3 className="mt-4 font-display text-xl md:text-2xl text-forest">Pay {inr(ok.payNow)}</h3>
             <p className="mt-1 text-sm text-ink/60">
               {stay.name} · {ok.nights} night{ok.nights > 1 ? "s" : ""} · {ok.rooms} room{ok.rooms > 1 ? "s" : ""}
             </p>

@@ -43,7 +43,7 @@ export default function MealPlans() {
             >
               {m.code}
             </span>
-            <h3 className={`mt-4 font-display text-2xl ${m.featured ? "" : "text-forest"}`}>{m.name}</h3>
+            <h3 className={`mt-4 font-display text-xl md:text-2xl ${m.featured ? "" : "text-forest"}`}>{m.name}</h3>
             <p className={`mt-2 text-sm ${m.featured ? "text-white/70" : "text-ink/65"}`}>{m.text}</p>
 
             <ul className={`mt-5 flex-1 space-y-2 border-t pt-5 text-sm ${m.featured ? "border-white/15" : "border-forest/10"}`}>
@@ -80,7 +80,7 @@ export default function MealPlans() {
 
       {/* Where you'll eat */}
       <div className="mx-auto mt-14 max-w-7xl px-4 md:mt-20 md:px-8">
-        <h3 className="mb-5 font-display text-2xl text-forest md:text-2xl" data-reveal>
+        <h3 className="mb-5 font-display text-xl text-forest md:text-2xl" data-reveal>
           Where you&apos;ll eat
         </h3>
         <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0" data-reveal>

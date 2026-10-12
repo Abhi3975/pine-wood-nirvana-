@@ -25,7 +25,7 @@ export default function WaysToStay() {
               <Img src={w.img} alt={w.title} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 82vw" className="object-cover" />
             </div>
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="font-display text-2xl text-forest">{w.title}</h3>
+              <h3 className="font-display text-xl md:text-2xl text-forest">{w.title}</h3>
               <p className="mt-1 text-ink/65">{w.pitch}</p>
               <ul className="mt-4 space-y-2 text-sm">
                 {w.points.map((p) => (

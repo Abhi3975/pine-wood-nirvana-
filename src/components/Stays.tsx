@@ -50,7 +50,7 @@ export default function Stays() {
           data-reveal
         >
           <div>
-            <h3 className="font-display text-2xl text-forest md:text-2xl">Coming with a big group?</h3>
+            <h3 className="font-display text-xl text-forest md:text-2xl">Coming with a big group?</h3>
             <p className="mt-2 max-w-xl text-ink/70">
               Ask about our <b>Luxury Villa</b> — ideal for families, friends&apos; getaways and celebrations, with the
               lawn, bonfire and banquet hall at your disposal.
@@ -132,7 +132,7 @@ function StayCard({ stay, flip }: { stay: Stay; flip: boolean }) {
         <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-pine/10 px-3 py-1 text-xs font-semibold text-pine">
           <UsersIcon className="size-4" /> {stay.guests}
         </p>
-        <h3 className="font-display text-2xl text-forest md:text-3xl">{stay.name}</h3>
+        <h3 className="font-display text-xl text-forest md:text-3xl">{stay.name}</h3>
         <p className="mt-2 text-[15px] leading-relaxed text-ink/70 md:mt-4 md:text-base">{stay.blurb}</p>
         <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 md:mt-6 md:gap-y-2.5">
           {stay.highlights.map((h) => (

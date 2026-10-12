@@ -32,7 +32,7 @@ export default function Experiences() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white">
-                <h3 className="font-display text-2xl">{x.title}</h3>
+                <h3 className="font-display text-xl md:text-2xl">{x.title}</h3>
                 <p className="mt-1.5 text-sm text-white/80">{x.text}</p>
               </figcaption>
             </figure>

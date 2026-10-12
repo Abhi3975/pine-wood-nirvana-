@@ -79,7 +79,7 @@ export default function VideoStories() {
           <div className="flex aspect-[9/16] flex-col justify-between rounded-3xl border border-dashed border-white/25 bg-white/5 p-6">
             <QuoteIcon className="size-10 text-sunset" />
             <div>
-              <h3 className="font-display text-2xl leading-snug">Stayed with us? Share your story.</h3>
+              <h3 className="font-display text-xl md:text-2xl leading-snug">Stayed with us? Share your story.</h3>
               <p className="mt-3 text-sm text-white/65">
                 Send us a short video from your stay — the pool, the bonfire, your favourite moment — and we&apos;ll
                 feature it here.

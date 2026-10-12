@@ -34,7 +34,7 @@ export default function Pricing() {
                 Signature stay
               </span>
             )}
-            <h3 className={`font-display text-2xl ${p.featured ? "" : "text-forest"}`}>{p.name}</h3>
+            <h3 className={`font-display text-xl md:text-2xl ${p.featured ? "" : "text-forest"}`}>{p.name}</h3>
             <p className={`text-sm ${p.featured ? "text-white/60" : "text-ink/55"}`}>{p.guests}</p>
 
             <div className="mt-6 flex items-end gap-1.5">
@@ -66,7 +66,7 @@ export default function Pricing() {
       </ul>
 
       <div className="mx-auto mt-12 max-w-7xl px-4 md:mt-16 md:px-8" data-reveal>
-        <h3 className="mb-5 font-display text-2xl text-forest">Make it yours</h3>
+        <h3 className="mb-5 font-display text-xl md:text-2xl text-forest">Make it yours</h3>
         <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {pricing.extras.map((x) => (
             <li key={x.title} className="rounded-2xl bg-white p-4 ring-1 ring-forest/10 md:p-5">
