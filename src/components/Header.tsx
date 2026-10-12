@@ -15,6 +15,7 @@ const links = [
   { href: "#reviews", label: "Reviews" },
   { href: "#nearby", label: "Nearby" },
   { href: "#location", label: "Location" },
+  { href: "#founder", label: "Founder" },
   { href: "#faq", label: "FAQ" },
 ];
 

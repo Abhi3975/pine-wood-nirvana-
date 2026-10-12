@@ -94,7 +94,7 @@ export default function Concierge() {
   return (
     <>
       {/* Launcher */}
-      <div className="fixed bottom-24 right-4 z-50 flex flex-col items-end gap-3 md:bottom-6 md:right-6">
+      <div className="fixed bottom-24 right-4 z-40 flex flex-col items-end gap-3 md:bottom-6 md:right-6">
         {nudge && !open && (
           <div className="animate-pop relative">
             <button
