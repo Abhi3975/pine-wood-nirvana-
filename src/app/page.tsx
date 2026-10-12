@@ -5,6 +5,7 @@ import Experiences from "@/components/Experiences";
 import FAQ from "@/components/FAQ";
 import Film from "@/components/Film";
 import Footer from "@/components/Footer";
+import Founder from "@/components/Founder";
 import Gallery from "@/components/Gallery";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -37,6 +38,7 @@ export default function Home() {
         <Nearby />
         <Location />
         <About />
+        <Founder />
         <FAQ />
       </main>
       <Footer />

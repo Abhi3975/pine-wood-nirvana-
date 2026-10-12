@@ -3,7 +3,7 @@ import { WhatsAppIcon } from "./icons";
 
 export default function FAQ() {
   return (
-    <section id="faq" className="px-4 py-16 md:px-8 md:py-28">
+    <section id="faq" className="bg-sand/60 px-4 py-16 md:px-8 md:py-28">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         <div data-reveal>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-sunset">Good to know</p>

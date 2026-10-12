@@ -226,6 +226,19 @@ export const nearby = [
 ];
 
 // From ghumog.in.
+export const founder = {
+  name: "Aviral Jain",
+  roles: ["Founder, GhumoG Stay", "Director, AMV Vyapar Pvt. Ltd."],
+  photo: "/images/founder.webp",
+  tags: ["Entrepreneur", "Hotelier", "Travel expert", "Content creator"],
+  bio: [
+    "Aviral Jain is a passionate entrepreneur, travel expert, hotelier, travel content creator and media professional with more than 20 years in the travel and hospitality industry.",
+    "As Director of AMV Vyapar Pvt. Ltd. and owner of GhumoG Stay, he has managed and run hotels, resorts, homestays and luxury villas across some of India's most-loved destinations — Pine Wood Nirvana among them.",
+  ],
+  vision:
+    "To give every traveller a comfortable stay, a memorable experience, and the true beauty of nature and local culture.",
+};
+
 export const ghumog = {
   founder: "Aviral Jain",
   years: "20 years",
